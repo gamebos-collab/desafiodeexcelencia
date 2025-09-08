@@ -11,10 +11,10 @@ export default function Router() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/equipes" element={<EquipesPage />} />
-        <Route path="/ranking" element={<Ranking />} />
-        <Route path="/conquistas" element={<Conquistas />} />
-        <Route path="/regras" element={<Regras />} />
+        <Route path="/Equipes" element={<EquipesPage />} />
+        <Route path="/Ranking" element={<Ranking />} />
+        <Route path="/Conquistas" element={<Conquistas />} />
+        <Route path="/Regras" element={<Regras />} />
       </Routes>
     </BrowserRouter>
   );
