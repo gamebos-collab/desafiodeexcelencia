@@ -1,0 +1,69 @@
+/* Fonte principal do projeto */
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap");
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo global */
+body {
+  font-family: "Orbitron", sans-serif;
+  background: url("/assets/background.gif") center center / cover no-repeat;
+  color: white;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Links padrão */
+a {
+  color: #8e2de2;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ff4081;
+}
+
+/* Botões padrão */
+button {
+  font-family: "Orbitron", sans-serif;
+}
+
+/* Scrollbar personalizada (opcional) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2a0845;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8e2de2;
+  border-radius: 4px;
+}
+
+/* Zoom suave ao passar o mouse sobre imagens de membros */
+.zoom-img {
+  transition: transform 0.3s ease;
+  display: inline-block;
+  object-fit: cover;
+}
+
+.zoom-img:hover {
+  transform: scale(1.6);
+}
+
+/* Efeito hover para linha da tabela no popup */
+.table-row-hover {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.table-row-hover:hover {
+  transform: scale(1.05);
+  background-color: #ab45ff;
+}

@@ -1,0 +1,41 @@
+.navigation-container {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  margin-top: 16px;
+  z-index: 1;
+  position: relative;
+}
+
+.nav-btn {
+  margin: 0.5rem;
+  padding: 1rem 2rem;
+  background-color: #8e2de2;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px #8e2de2;
+  transition: transform 0.2s;
+}
+
+.nav-btn:hover {
+  background-color: #e08e1b;
+  transform: scale(1.05);
+}
+
+.animated-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/particles.gif"); /* ou use Lottie */
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  z-index: -1;
+  pointer-events: none;
+}
