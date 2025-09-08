@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import * as XLSX from "xlsx";
 import Navigation from "../components/Navigation/Navigation";
-import Footer from "../components/Footer/Footer";
 
 const Ranking = () => {
   const [rankingData, setRankingData] = useState([]);
@@ -83,9 +82,7 @@ const Ranking = () => {
         <p style={{ color: "#fff" }}>Carregando dados do ranking...</p>
       )}
 
-      <div style={{ marginTop: "6rem" }}>
-        <Footer />
-      </div>
+      <div style={{ marginTop: "6rem" }}></div>
     </div>
   );
 };

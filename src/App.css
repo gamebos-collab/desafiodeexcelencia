@@ -5,6 +5,37 @@
   text-align: center;
 }
 
+@media (max-width: 600px) {
+  .homepage-container,
+  .ranking-board,
+  .footer {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .footer {
+    text-align: center;
+    padding-bottom: 20px;
+  }
+}
+
+/* src/styles/global.css */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

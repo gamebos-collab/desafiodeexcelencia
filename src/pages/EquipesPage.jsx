@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import * as XLSX from "xlsx";
 import EquipeCard from "../components/EquipeCard/EquipeCard";
 import Navigation from "../components/Navigation/Navigation";
-import Footer from "../components/Footer/Footer";
 
 export default function EquipesPage() {
   const [membroSelecionado, setMembroSelecionado] = useState(null);
@@ -314,13 +313,6 @@ export default function EquipesPage() {
           </div>
         </div>
       )}
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <Footer />
     </div>
   );
 }

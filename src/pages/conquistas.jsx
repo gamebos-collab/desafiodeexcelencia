@@ -1,6 +1,5 @@
 import React from "react";
 import Navigation from "../components/Navigation/Navigation";
-import Footer from "../components/Footer/Footer";
 
 const conquistas = [
   {
@@ -108,8 +107,6 @@ const Conquistas = () => {
           </div>
         ))}
       </div>
-
-      <Footer />
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import * as XLSX from "xlsx";
-import Footer from "../Footer/Footer"; // ← Certifique-se de importar o rodapé
+// ← Certifique-se de importar o rodapé
 import "./HomePage.css";
 
 export default function HomePage() {
@@ -157,7 +157,6 @@ export default function HomePage() {
         <div className="animated-background" />
       </div>
       <br />
-      <Footer /> {/* ← Rodapé agora fica no final da tela */}
     </div>
   );
 }

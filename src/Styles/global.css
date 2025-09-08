@@ -11,10 +11,19 @@
 /* Estilo global */
 body {
   font-family: "Orbitron", sans-serif;
-  background: url("/assets/background.gif") center center / cover no-repeat;
+  background: url("/assets/background.gif") center center / contain no-repeat;
+  background-color: #000; /* Fallback para áreas não cobertas */
   color: white;
   line-height: 1.6;
   overflow-x: hidden;
+}
+
+/* Ajuste para dispositivos móveis */
+@media (max-width: 600px) {
+  body {
+    background-size: 100% auto;
+    background-position: top center;
+  }
 }
 
 /* Links padrão */

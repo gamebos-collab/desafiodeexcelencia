@@ -6,7 +6,7 @@
   text-align: center;
   padding: 2rem;
   position: relative;
-  height: 160vh;
+  min-height: calc(20vh - 100px);
   overflow: hidden;
 }
 

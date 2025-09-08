@@ -1,6 +1,5 @@
 import React from "react";
 import Navigation from "../components/Navigation/Navigation";
-import Footer from "../components/Footer/Footer";
 
 function Regras() {
   return (
@@ -232,7 +231,6 @@ function Regras() {
       </div>
       <br />
       <br />
-      <Footer />
     </div>
   );
 }

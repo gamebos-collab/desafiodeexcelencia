@@ -2,7 +2,6 @@ import React from "react";
 import HomePage from "../components/homepage/HomePage";
 import PainelDeConquistas from "../components/PainelDeConquistas/PainelDeConquistas";
 import Informativo from "../components/Informativo/Informativo";
-import Footer from "../components/Footer/Footer";
 
 export default function Home() {
   const conquistas = [
@@ -30,7 +29,6 @@ export default function Home() {
     <div style={{ position: "relative", padding: "40px", textAlign: "center" }}>
       <HomePage />
       <Informativo />
-      <Footer />
     </div>
   );
 }
