@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import * as XLSX from "xlsx";
-// ← Certifique-se de importar o rodapé
 import "./HomePage.css";
 
 export default function HomePage() {
