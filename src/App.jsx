@@ -1,5 +1,5 @@
 // src/App.jsx
-import Router from "./router";
+import Router from "./Router";
 import Footer from "./components/Footer/Footer"; // se existir
 
 function App() {
