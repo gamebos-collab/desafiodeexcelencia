@@ -5,8 +5,9 @@ export default function Footer() {
   return (
     <footer className="footer">
       <p>
-        © 2025 Desafio de Excelência. Desenvolvido por Felipe Ferreira, Cauã Pinheiro e Enrigo Bordt.
+        © 2025 Desafio de Excelência. Desenvolvido por Felipe Ferreira, Cauã
+        Pivotto e Tigrinho.
       </p>
     </footer>
-);
+  );
 }

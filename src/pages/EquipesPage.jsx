@@ -160,7 +160,7 @@ export default function EquipesPage() {
         textAlign: "center",
         background: "linear-gradient(135deg, #160125ff)",
         position: "relative",
-        minHeight: "70vh",
+        minHeight: "95vh",
         display: "flex",
         flexDirection: "column",
       }}
@@ -177,6 +177,7 @@ export default function EquipesPage() {
           justifyContent: "center",
           flexWrap: "wrap",
           flexGrow: 1,
+          marginBottom: "64px", // ← Espaço extra entre os cards e o rodapé
         }}
       >
         {equipes.map((equipe, index) => (

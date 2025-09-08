@@ -11,7 +11,7 @@ export default function EquipeCard({
         backgroundColor: "#2a0845",
         borderRadius: "12px",
         boxShadow: "0 2px 18px rgba(184, 14, 241, 0.7)",
-        padding: "16px",
+        padding: "6px",
         width: "260px",
         color: "#fff",
         textAlign: "center",
