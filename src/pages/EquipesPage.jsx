@@ -134,23 +134,23 @@ export default function EquipesPage() {
   const thStyle = {
     borderBottom: "1px solid #ccc",
     padding: "8px",
-    textAlign: "center", // ← Modificado para alinhar à esquerda
+    textAlign: "center",
     fontWeight: "bold",
     color: "#fff",
-    whiteSpace: "nowrap", // ← Impede quebra de linha
-    overflow: "hidden", // ← Garante que o conteúdo não ultrapasse
-    textOverflow: "ellipsis", // ← Adiciona reticências se o texto for longo
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
   };
 
   const tdStyle = {
     borderBottom: "2px solid #444",
     padding: "12px",
-    textAlign: "center", // ← Modificado para alinhar à esquerda
+    textAlign: "center",
     color: "#fff",
-    maxWidth: "2200px", // ← Limita a largura máxima da célula
-    whiteSpace: "nowrap", // ← Impede quebra de linha
-    overflow: "hidden", // ← Garante que o conteúdo não ultrapasse
-    textOverflow: "ellipsis", // ← Adiciona reticências se o texto for longo
+    maxWidth: "2200px",
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
   };
 
   return (
@@ -177,7 +177,7 @@ export default function EquipesPage() {
           justifyContent: "center",
           flexWrap: "wrap",
           flexGrow: 1,
-          marginBottom: "64px", // ← Espaço extra entre os cards e o rodapé
+          marginBottom: "64px",
         }}
       >
         {equipes.map((equipe, index) => (
@@ -246,11 +246,17 @@ export default function EquipesPage() {
                 Equipe: <strong>{equipeSelecionada.nome}</strong>
               </p>
               <p style={{ color: "#fff" }}>
-                Pontuação:{" "}
+                 Pontuação:{" "}
                 <strong>
-                  {pontuacoesPorCentralizadora[
-                    membroSelecionado.nome.trim().toUpperCase()
-                  ] ?? 0}{" "}
+                  {Number.isFinite(
+                    pontuacoesPorCentralizadora[
+                      membroSelecionado.nome.trim().toUpperCase()
+                    ]
+                  )
+                    ? pontuacoesPorCentralizadora[
+                        membroSelecionado.nome.trim().toUpperCase()
+                      ]
+                    : 0}{" "}
                   pontos
                 </strong>
               </p>
@@ -270,7 +276,7 @@ export default function EquipesPage() {
                   style={{
                     width: "100%",
                     borderCollapse: "collapse",
-                    tableLayout: "relative", // ← Adicionado para respeitar largura das colunas
+                    tableLayout: "relative",
                   }}
                 >
                   <thead>
@@ -287,13 +293,17 @@ export default function EquipesPage() {
                         <td style={tdStyle}>{linha.membro}</td>
                         <td style={tdStyle}>{linha.nome}</td>
                         <td style={tdStyle}>{linha.funcao}</td>
-                        <td style={tdStyle}>{linha.pontuacao}</td>
+                        <td style={tdStyle}>
+                          {Number.isFinite(linha.pontuacao)
+                            ? linha.pontuacao
+                            : 0}
+                        </td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               ) : (
-                <p style={{ color: "#fff" }}>Descrição não encontrada.</p>
+                <p style={{ color: "#fff" }}>Descrição não encontrada.</p>
               )}
             </div>
 

@@ -18,7 +18,9 @@ export default function EquipeCard({
       }}
     >
       <h3 style={{ fontSize: "1.4rem", marginBottom: "8px" }}>{nome}</h3>
-      <p style={{ fontSize: "1.1rem", color: "#f9a826" }}>{pontuacao} pontos</p>
+      <p style={{ fontSize: "1.1rem", color: "#f9a826" }}>
+        {typeof pontuacao === "number" ? `${pontuacao} pontos` : "0 pontos"}
+      </p>
 
       {/* Primeira linha de membros */}
       <div
@@ -31,7 +33,7 @@ export default function EquipeCard({
           marginTop: "8px",
         }}
       >
-        {membrosLinha1.map((membro, index) => (
+        {membrosLinha1?.map((membro, index) => (
           <div key={index} style={{ textAlign: "center" }}>
             <img
               src={membro.avatar}
@@ -62,7 +64,7 @@ export default function EquipeCard({
           marginTop: "12px",
         }}
       >
-        {membrosLinha2.map((membro, index) => (
+        {membrosLinha2?.map((membro, index) => (
           <div key={index} style={{ textAlign: "center" }}>
             <img
               src={membro.avatar}
