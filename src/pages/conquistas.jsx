@@ -5,7 +5,7 @@ const conquistas = [
   {
     nome: "Zero B.O Acima de 15 Dias",
     descricao: "Campeão primeiro desafio.",
-    icone: "/assets/teste.jpg",
+    icone: "/assets/conquistadesbloqueada.png",
     desbloqueada: true,
   },
   {
