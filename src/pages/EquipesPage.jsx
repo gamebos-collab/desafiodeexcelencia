@@ -213,7 +213,10 @@ export default function EquipesPage() {
         >
           <div
             style={{
-              backgroundColor: "#2a0845",
+              backgroundImage: 'url("/assets/backgroundpopup.jpg")',
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
               boxShadow: "0 2px 14px rgba(184, 14, 241, 0.7)",
               padding: "40px",
               borderRadius: "8px",
@@ -229,7 +232,7 @@ export default function EquipesPage() {
               style={{
                 position: "sticky",
                 top: 0,
-                backgroundColor: "#2a0845",
+                backgroundImage: 'url("/assets/backgroundpopup2.png")',
                 paddingBottom: "20px",
                 zIndex: 10,
               }}
