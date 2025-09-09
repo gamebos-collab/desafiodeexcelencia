@@ -94,7 +94,7 @@ export default function HomePage() {
             fontSize: "12px",
           }}
         >
-          <p>🕒 Última atualização do sistema: {ultimaAtualizacao}</p>
+          <p>🕒 Última atualização do sistema: 09/09/2025 09:53h</p>
         </motion.div>
 
         <div className="tabela-overlay">
