@@ -8,6 +8,10 @@ export default function HomePage() {
   const navigate = useNavigate();
   const [dadosTabela, setDadosTabela] = useState([]);
 
+  // Variável de ambiente com data do deploy
+  const ultimaAtualizacao =
+    import.meta.env.VITE_DEPLOY_TIMESTAMP || "Data não disponível";
+
   useEffect(() => {
     const carregarDados = async () => {
       try {
@@ -39,12 +43,10 @@ export default function HomePage() {
       style={{
         display: "flex",
         flexDirection: "column",
-        minHeight: "100vh", // ← Garante que a página ocupe toda a altura da tela
+        minHeight: "100vh",
       }}
     >
       <div style={{ flexGrow: 1 }}>
-        {" "}
-        {/* ← Empurra o rodapé para o final */}
         <motion.div
           className="banner"
           initial={{ opacity: 0, y: -50 }}
@@ -56,6 +58,7 @@ export default function HomePage() {
             Competição entre equipes rumo à excelência!
           </p>
         </motion.div>
+
         <motion.div
           className="buttons"
           initial={{ opacity: 0 }}
@@ -78,6 +81,22 @@ export default function HomePage() {
             Regras
           </button>
         </motion.div>
+
+        {/* Informativo de atualização */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2 }}
+          style={{
+            textAlign: "center",
+            marginTop: "10px",
+            color: "#ccc",
+            fontSize: "12px",
+          }}
+        >
+          <p>🕒 Última atualização do sistema: {ultimaAtualizacao}</p>
+        </motion.div>
+
         <div className="tabela-overlay">
           {dadosTabela.length > 1 ? (
             <div
