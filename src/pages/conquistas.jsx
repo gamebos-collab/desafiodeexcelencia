@@ -3,9 +3,9 @@ import Navigation from "../components/Navigation/Navigation";
 
 const conquistas = [
   {
-    nome: "Campeão",
+    nome: "Zero B.O Acima de 15 Dias",
     descricao: "Campeão primeiro desafio.",
-    icone: "/assets/conquistadesbloqueada.png",
+    icone: "/assets/teste.jpg",
     desbloqueada: true,
   },
   {
@@ -100,10 +100,16 @@ const Conquistas = () => {
                 marginBottom: "16px",
               }}
             />
-            <h3 style={{ marginBottom: "8px", color: "#f9a826" }}>
+            <h3
+              style={{
+                marginBottom: "8px",
+                fontSize: "1.0rem",
+                color: "#f9a826",
+              }}
+            >
               {conquista.nome}
             </h3>
-            <p style={{ fontSize: "0.95rem" }}>{conquista.descricao}</p>
+            <p style={{ fontSize: "0.75rem" }}>{conquista.descricao}</p>
           </div>
         ))}
       </div>
