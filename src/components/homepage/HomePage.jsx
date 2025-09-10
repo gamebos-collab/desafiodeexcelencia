@@ -170,7 +170,7 @@ export default function HomePage() {
                   src="/assets/bbmlogistica.png" // substitua pelo caminho correto da imagem
                   alt="Banner de atualização"
                   style={{
-                    maxWidth: "50%",
+                    maxWidth: "47%",
                     height: "auto",
                     borderRadius: "12px",
                     boxShadow: "0 4px 12px rgba(0,0,0,0.4)",
