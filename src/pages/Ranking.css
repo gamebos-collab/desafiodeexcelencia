@@ -1,15 +1,12 @@
-@keyframes blinkZoom {
+@keyframes glow {
   0% {
-    transform: scale(1);
-    opacity: 1;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
   }
   50% {
-    transform: scale(1.1);
-    opacity: 0.6;
+    box-shadow: 0 0 16px rgba(255, 255, 255, 0.6);
   }
   100% {
-    transform: scale(1);
-    opacity: 1;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
   }
 }
 
@@ -35,6 +32,7 @@
 .ranking-cell {
   border-bottom: 1px solid #ccc;
   padding: 10px;
+  gap: 150px;
   transition: transform 1s ease, box-shadow 1s ease;
 }
 
@@ -46,24 +44,21 @@
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
 }
 
-/* Estilos animados para os colocados */
+/* Estilos com brilho animado para os colocados */
 .ranking-first {
   background-color: #c7a004ff;
-  box-shadow: 0 0 15px #ffd700;
   font-weight: bold;
-  animation: blinkZoom 2.5s infinite;
+  animation: glow 2.5s infinite;
 }
 
 .ranking-second {
   background-color: #a5a5a5ff;
-  box-shadow: 0 0 10px #c0c0c0;
-  animation: blinkZoom 2.5s infinite;
+  animation: glow 2.5s infinite;
 }
 
 .ranking-third {
   background-color: #cd7f32;
-  box-shadow: 0 0 8px #cd7f32;
-  animation: blinkZoom 2.5s infinite;
+  animation: glow 2.5s infinite;
 }
 
 /* Interrompe a animação ao passar o mouse */
