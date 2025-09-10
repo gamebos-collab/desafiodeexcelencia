@@ -1,0 +1,88 @@
+@keyframes blinkZoom {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.ranking-container {
+  padding: 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #160125ff);
+  min-height: 100vh;
+}
+
+.ranking-title {
+  color: #f9a826;
+  margin-bottom: 32px;
+}
+
+.ranking-table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 80%;
+  color: #fff;
+}
+
+.ranking-cell {
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  transition: transform 1s ease, box-shadow 1s ease;
+}
+
+/* Zoom na linha inteira ao passar o mouse */
+.ranking-row:hover {
+  transform: scale(1.3);
+  z-index: 2;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+/* Estilos animados para os colocados */
+.ranking-first {
+  background-color: #c7a004ff;
+  box-shadow: 0 0 15px #ffd700;
+  font-weight: bold;
+  animation: blinkZoom 2.5s infinite;
+}
+
+.ranking-second {
+  background-color: #a5a5a5ff;
+  box-shadow: 0 0 10px #c0c0c0;
+  animation: blinkZoom 2.5s infinite;
+}
+
+.ranking-third {
+  background-color: #cd7f32;
+  box-shadow: 0 0 8px #cd7f32;
+  animation: blinkZoom 2.5s infinite;
+}
+
+/* Interrompe a animação ao passar o mouse */
+.ranking-row:hover.ranking-first,
+.ranking-row:hover.ranking-second,
+.ranking-row:hover.ranking-third {
+  animation: none;
+}
+
+/* GIFs */
+.ranking-gif-cell {
+  text-align: center;
+  padding: 1rem;
+}
+
+.ranking-gif {
+  max-height: 80px;
+}
+
+.ranking-loading {
+  color: #fff;
+}

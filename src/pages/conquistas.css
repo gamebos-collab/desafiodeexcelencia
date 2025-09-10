@@ -1,0 +1,10 @@
+.zoomable {
+  transition: transform 0.4s ease;
+}
+
+.zoomable:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+  z-index: 2;
+  position: relative;
+}

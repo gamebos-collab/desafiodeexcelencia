@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Navigation from "../components/Navigation/Navigation";
+import "./Conquistas.css";
 
 const conquistas = [
   {
@@ -116,6 +117,7 @@ const Conquistas = () => {
             <img
               src={conquista.icone}
               alt={conquista.nome}
+              className={conquista.desbloqueada ? "zoomable" : ""}
               style={{
                 width: "100%",
                 height: "180px",

@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="footer">
       <p>
         © 2025 Desafio de Excelência. Desenvolvido por Felipe Ferreira, Cauã
-        Pivotto e Tigrinho.
+        Pivotto e Endrigo Boreli.
       </p>
     </footer>
   );

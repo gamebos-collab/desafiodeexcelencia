@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import * as XLSX from "xlsx";
 import Navigation from "../components/Navigation/Navigation";
+import "./Ranking.css";
 
 const Ranking = () => {
   const [rankingData, setRankingData] = useState([]);
@@ -20,66 +21,56 @@ const Ranking = () => {
       .catch((err) => console.error("Erro ao carregar planilha:", err));
   }, []);
 
+  const getRowClass = (index) => {
+    if (index === 0) return "ranking-row ranking-first";
+    if (index === 1) return "ranking-row ranking-second";
+    if (index === 2) return "ranking-row ranking-third";
+    return "ranking-row";
+  };
+
+  const getGifForPosition = (index) => {
+    if (index === 0) return "https://media.tenor.com/1st-place.gif";
+    if (index === 1) return "https://media.tenor.com/2nd-place.gif";
+    if (index === 2) return "https://media.tenor.com/3rd-place.gif";
+    return null;
+  };
+
   return (
-    <div
-      style={{
-        padding: "2rem",
-        textAlign: "center",
-        background: "linear-gradient(135deg, #160125ff)",
-        minHeight: "100vh",
-      }}
-    >
+    <div className="ranking-container">
       <Navigation />
 
-      <h1 style={{ color: "#f9a826", marginBottom: "32px" }}>
-        Ranking dos Maiores Pontuadores
-      </h1>
+      <h1 className="ranking-title">Ranking dos Maiores Pontuadores</h1>
+      <p className="subtitle">Ranking geral dos maiores pontuadores</p>
 
       {rankingData.length > 0 ? (
-        <table
-          style={{
-            margin: "0 auto",
-            borderCollapse: "collapse",
-            width: "80%",
-            color: "#fff",
-          }}
-        >
-          <thead>
-            <tr>
-              {rankingData[0].map((header, index) => (
-                <th
-                  key={index}
-                  style={{
-                    borderBottom: "2px solid #f9a826",
-                    padding: "12px",
-                    fontWeight: "bold",
-                  }}
-                >
-                  {header}
-                </th>
-              ))}
-            </tr>
-          </thead>
+        <table className="ranking-table">
           <tbody>
-            {rankingData.slice(1).map((row, rowIndex) => (
-              <tr key={rowIndex}>
-                {row.map((cell, cellIndex) => (
-                  <td
-                    key={cellIndex}
-                    style={{
-                      borderBottom: "1px solid #ccc",
-                      padding: "10px",
-                    }}
-                  >
-                    {cell}
-                  </td>
-                ))}
-              </tr>
+            {rankingData.map((row, rowIndex) => (
+              <React.Fragment key={rowIndex}>
+                {getGifForPosition(rowIndex) && (
+                  <tr>
+                    <td colSpan={row.length} className="ranking-gif-cell">
+                      <img
+                        src={getGifForPosition(rowIndex)}
+                        alt={`Posição ${rowIndex + 1}`}
+                        className="ranking-gif"
+                      />
+                    </td>
+                  </tr>
+                )}
+                <tr className={getRowClass(rowIndex)}>
+                  {row.map((cell, cellIndex) => (
+                    <td key={cellIndex} className="ranking-cell">
+                      {cell}
+                    </td>
+                  ))}
+                </tr>
+              </React.Fragment>
             ))}
           </tbody>
         </table>
       ) : (
-        <p style={{ color: "#fff" }}>Carregando dados do ranking...</p>
+        <p className="ranking-loading">Carregando dados do ranking...</p>
       )}
 
       <div style={{ marginTop: "6rem" }}></div>
@@ -88,4 +79,3 @@ const Ranking = () => {
 };
 
 export default Ranking;
-// forçar modificação
