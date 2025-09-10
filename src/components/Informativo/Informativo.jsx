@@ -105,13 +105,13 @@ export default function Informativo() {
             <video
               controls
               style={{
-                width: "40%",
-                maxHeight: "295px",
+                width: "0%",
+                maxHeight: "0px",
                 borderRadius: "12px",
                 marginBottom: "94px",
               }}
             >
-              <source src="/assets/video-desafio.mp4" type="video/mp4" />
+              <source src="/assets/.mp4" type="video/mp4" />
               Seu navegador não suporta vídeo.
             </video>
             <p
@@ -124,6 +124,19 @@ export default function Informativo() {
             >
               Nenhuma atualização até o momento.
             </p>
+            <br />
+            <img
+              src="/assets/bbmlogistica.png"
+              alt="Banner do Desafio"
+              style={{
+                width: "28%",
+                maxHeight: "100px",
+                objectFit: "cover",
+                borderRadius: "12px",
+                marginBottom: "24px",
+              }}
+            />
+            <br />
             <button
               onClick={fecharPopup}
               style={{
