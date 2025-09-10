@@ -165,7 +165,7 @@ export default function HomePage() {
               </table>
 
               {/* ✅ Imagem abaixo da tabela */}
-              <div style={{ marginTop: "40px", textAlign: "center" }}>
+              <div style={{ marginTop: "10px", textAlign: "center" }}>
                 <img
                   src="/assets/bbmlogistica.png" // substitua pelo caminho correto da imagem
                   alt="Banner de atualização"
