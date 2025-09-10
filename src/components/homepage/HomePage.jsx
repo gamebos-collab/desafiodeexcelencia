@@ -8,7 +8,6 @@ export default function HomePage() {
   const navigate = useNavigate();
   const [dadosTabela, setDadosTabela] = useState([]);
 
-  // Variável de ambiente com data do deploy
   const ultimaAtualizacao =
     import.meta.env.VITE_DEPLOY_TIMESTAMP || "Data não disponível";
 
@@ -82,7 +81,6 @@ export default function HomePage() {
           </button>
         </motion.div>
 
-        {/* Informativo de atualização */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -152,7 +150,7 @@ export default function HomePage() {
                           <td
                             key={cellIndex}
                             style={{
-                              padding: "6px",
+                              padding: "8.5px",
                               borderBottom: "1px solid #707070ff",
                               textAlign: "center",
                             }}
@@ -165,6 +163,20 @@ export default function HomePage() {
                   })}
                 </tbody>
               </table>
+
+              {/* ✅ Imagem abaixo da tabela */}
+              <div style={{ marginTop: "40px", textAlign: "center" }}>
+                <img
+                  src="/assets/bbmlogistica.png" // substitua pelo caminho correto da imagem
+                  alt="Banner de atualização"
+                  style={{
+                    maxWidth: "50%",
+                    height: "auto",
+                    borderRadius: "12px",
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.4)",
+                  }}
+                />
+              </div>
             </div>
           ) : (
             <p style={{ color: "#fff", marginTop: "40px" }}>
@@ -172,6 +184,7 @@ export default function HomePage() {
             </p>
           )}
         </div>
+
         <div className="animated-background" />
       </div>
       <br />

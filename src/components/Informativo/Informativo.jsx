@@ -98,7 +98,7 @@ export default function Informativo() {
               }}
             >
               Este desafio tem como objetivo promover a excelência operacional
-              da companhia. Acompanhe o BID (boletim de informações diárias)
+              da companhia. Acompanhe o BID (boletim de informações diário)
               diretamente aqui.
             </p>
 
@@ -122,37 +122,7 @@ export default function Informativo() {
                 fontFamily: "sans-serif",
               }}
             >
-              Este desafio tem como objetivo promover a excelência operacional
-              da companhia. Acompanhe o BID (boletim de informações diárias)
-              diretamente aqui.Este desafio tem como objetivo promover a
-              excelência operacional da companhia. Acompanhe o BID (boletim de
-              informações diárias) diretamente aqui. Este desafio tem como
-              objetivo promover a excelência operacional da companhia. Acompanhe
-              o BID (boletim de informações diárias) diretamente aqui. Este
-              desafio tem como objetivo promover a excelência operacional da
-              companhia. Acompanhe o BID (boletim de informações diárias)
-              diretamente aqui.Este desafio tem como objetivo promover a
-              excelência operacional da companhia. Acompanhe o BID (boletim de
-              informações diárias) diretamente aqui. Este desafio tem como
-              objetivo promover a excelência operacional da companhia. Acompanhe
-              o BID (boletim de informações diárias) diretamente aqui.Este
-              desafio tem como objetivo promover a excelência operacional da
-              companhia. Acompanhe o BID (boletim de informações diárias)
-              diretamente aqui. Este desafio tem como objetivo promover a
-              excelência operacional da companhia. Acompanhe o BID (boletim de
-              informações diárias) diretamente aqui. Este desafio tem como
-              objetivo promover a excelência operacional da companhia. Acompanhe
-              o BID (boletim de informações diárias) diretamente aqui. Este
-              desafio tem como objetivo promover a excelência operacional da
-              companhia. Acompanhe o BID (boletim de informações diárias)
-              diretamente aqui. Este desafio tem como objetivo promover a
-              excelência operacional da companhia. Acompanhe o BID (boletim de
-              informações diárias) diretamente aqui. Este desafio tem como
-              objetivo promover a excelência operacional da companhia. Acompanhe
-              o BID (boletim de informações diárias) diretamente aqui. Este
-              desafio tem como objetivo promover a excelência operacional da
-              companhia. Acompanhe o BID (boletim de informações diárias)
-              diretamente aqui.
+              Nenhuma atualização até o momento.
             </p>
             <button
               onClick={fecharPopup}
