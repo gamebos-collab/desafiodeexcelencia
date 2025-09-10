@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Navigation from "../components/Navigation/Navigation";
-import "./Conquistas.css";
+import Conquistas from "./Conquistas.css";
 
 const conquistas = [
   {
