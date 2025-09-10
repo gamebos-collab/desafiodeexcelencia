@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Navigation from "../components/Navigation/Navigation";
-import Conquistas from "./Conquistas.css";
+import "./Conquistas.css"; // ✅ Corrigido: agora importa como CSS
 
 const conquistas = [
   {
@@ -138,8 +138,8 @@ const Conquistas = () => {
             <p style={{ fontSize: "0.75rem" }}>{conquista.descricao}</p>
           </div>
         ))}
+              
       </div>
-
       {imagemSelecionada && (
         <div
           onClick={fecharImagem}
