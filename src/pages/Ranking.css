@@ -31,17 +31,17 @@
 
 .ranking-cell {
   border-bottom: 1px solid #ccc;
-  padding: 10px;
+  padding: 15px;
   gap: 150px;
   transition: transform 1s ease, box-shadow 1s ease;
 }
 
 /* Zoom na linha inteira ao passar o mouse */
 .ranking-row:hover {
-  transform: scale(1.3);
+  transform: scale(1.1);
   z-index: 2;
   position: relative;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
 }
 
 /* Estilos com brilho animado para os colocados */

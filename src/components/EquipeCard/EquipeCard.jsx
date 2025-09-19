@@ -7,6 +7,7 @@ export default function EquipeCard({
 }) {
   return (
     <div
+      className="card-brilhante"
       style={{
         backgroundColor: "#2a0845",
         borderRadius: "12px",
@@ -15,6 +16,8 @@ export default function EquipeCard({
         width: "260px",
         color: "#fff",
         textAlign: "center",
+        position: "relative", // necessário para::before e::after funcionarem
+        overflow: "hidden", // evita que o brilho ultrapasse os limites
       }}
     >
       <h3 style={{ fontSize: "1.4rem", marginBottom: "8px" }}>{nome}</h3>

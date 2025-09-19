@@ -30,14 +30,20 @@ export default function EquipesPage() {
           POA: sheet["G3"]?.v !== undefined ? sheet["G3"].v : 0,
           SAO: sheet["G4"]?.v !== undefined ? sheet["G4"].v : 0,
           CWB: sheet["G5"]?.v !== undefined ? sheet["G5"].v : 0,
-          BLU: sheet["G6"]?.v !== undefined ? sheet["G6"].v : 0,
+          BLU: sheet["O10"]?.v !== undefined ? sheet["O10"].v : 0,
           VIX: sheet["G7"]?.v !== undefined ? sheet["G7"].v : 0,
           GRU: sheet["K2"]?.v !== undefined ? sheet["K2"].v : 0,
           CXS: sheet["K3"]?.v !== undefined ? sheet["K3"].v : 0,
           BHZ: sheet["K4"]?.v !== undefined ? sheet["K4"].v : 0,
           PPY: sheet["K5"]?.v !== undefined ? sheet["K5"].v : 0,
-          LDA: sheet["K6"]?.v !== undefined ? sheet["K6"].v : 0,
-          CAS: sheet["K7"]?.v !== undefined ? sheet["K7"].v : 0,
+          LDA: sheet["O8"]?.v !== undefined ? sheet["O8"].v : 0,
+          CAS: sheet["O9"]?.v !== undefined ? sheet["O9"].v : 0,
+          FLN: sheet["O2"]?.v !== undefined ? sheet["O2"].v : 0,
+          BAU: sheet["O3"]?.v !== undefined ? sheet["O3"].v : 0,
+          SOR: sheet["O4"]?.v !== undefined ? sheet["O4"].v : 0,
+          JVL: sheet["O5"]?.v !== undefined ? sheet["O5"].v : 0,
+          SMA: sheet["O6"]?.v !== undefined ? sheet["O6"].v : 0,
+          RIP: sheet["O7"]?.v !== undefined ? sheet["O7"].v : 0,
         };
         setPontuacoesPorCentralizadora(pontuacoes);
 
@@ -45,7 +51,7 @@ export default function EquipesPage() {
         const pontuacoesEquipe = {
           Sênior: getValorSeguro(sheet["H8"]),
           Pleno: getValorSeguro(sheet["L8"]),
-          Soft: getValorSeguro(sheet["P8"]),
+          Soft: getValorSeguro(sheet["P11"]),
         };
         setPontuacaoEquipe(pontuacoesEquipe);
 
@@ -80,7 +86,6 @@ export default function EquipesPage() {
       ],
       membrosLinha2: [
         { nome: "CWB", avatar: "/assets/equipesenior/cwb.jpg" },
-        { nome: "BLU", avatar: "/assets/equipesenior/blu.jpg" },
         { nome: "VIX", avatar: "/assets/equipesenior/vix.jpeg" },
       ],
     },
@@ -92,12 +97,10 @@ export default function EquipesPage() {
       membrosLinha1: [
         { nome: "GRU", avatar: "/assets/equipepleno/gru.png" },
         { nome: "CXS", avatar: "/assets/equipepleno/cxs.jpg" },
-        { nome: "BHZ", avatar: "/assets/equipepleno/bhz.png" },
       ],
       membrosLinha2: [
+        { nome: "BHZ", avatar: "/assets/equipepleno/bhz.png" },
         { nome: "PPY", avatar: "/assets/equipepleno/ppy.png" },
-        { nome: "LDA", avatar: "/assets/equipepleno/lda.jpg" },
-        { nome: "CAS", avatar: "/assets/equipepleno/cas.png" },
       ],
     },
     {
@@ -108,11 +111,14 @@ export default function EquipesPage() {
       membrosLinha1: [
         { nome: "FLN", avatar: "/assets/equipesoft/fln.jpg" },
         { nome: "BAU", avatar: "/assets/equipesoft/bau.png" },
+        { nome: "BLU", avatar: "/assets/equipesenior/blu.jpg" },
         { nome: "SOR", avatar: "/assets/equipesoft/sor.png" },
       ],
       membrosLinha2: [
         { nome: "JVL", avatar: "/assets/equipesoft/jvl.jpg" },
         { nome: "SMA", avatar: "/assets/equipesoft/sma.png" },
+        { nome: "LDA", avatar: "/assets/equipepleno/lda.jpg" },
+        { nome: "CAS", avatar: "/assets/equipepleno/cas.png" },
         { nome: "RIP", avatar: "/assets/equipesoft/rip.jpg" },
       ],
     },

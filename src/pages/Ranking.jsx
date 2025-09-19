@@ -4,7 +4,8 @@ import Navigation from "../components/Navigation/Navigation";
 import "./Ranking.css";
 
 const Ranking = () => {
-  const [rankingData, setRankingData] = useState([]);
+  const [rankingGeral, setRankingGeral] = useState([]);
+  const [rankingSoft, setRankingSoft] = useState([]);
 
   useEffect(() => {
     fetch(`/gamekpi.xlsx?v=${Date.now()}`)
@@ -12,11 +13,21 @@ const Ranking = () => {
       .then((data) => {
         const workbook = XLSX.read(data, { type: "array" });
         const sheet = workbook.Sheets["Planilha2"];
-        const json = XLSX.utils.sheet_to_json(sheet, {
+
+        // Ranking geral (sênior e soft juntos)
+        const geral = XLSX.utils.sheet_to_json(sheet, {
           range: "A2:D4",
           header: 1,
         });
-        setRankingData(json);
+
+        // Ranking Soft (nova faixa da planilha)
+        const soft = XLSX.utils.sheet_to_json(sheet, {
+          range: "A38:D40", // ajuste conforme a posição dos dados
+          header: 1,
+        });
+
+        setRankingGeral(geral);
+        setRankingSoft(soft);
       })
       .catch((err) => console.error("Erro ao carregar planilha:", err));
   }, []);
@@ -35,42 +46,57 @@ const Ranking = () => {
     return null;
   };
 
+  const renderRankingTable = (data) => (
+    <table className="ranking-table">
+      <tbody>
+        {data.map((row, rowIndex) => (
+          <React.Fragment key={rowIndex}>
+            {getGifForPosition(rowIndex) && (
+              <tr>
+                <td colSpan={row.length} className="ranking-gif-cell">
+                  <img
+                    src={getGifForPosition(rowIndex)}
+                    alt={`Posição ${rowIndex + 1}`}
+                    className="ranking-gif"
+                  />
+                </td>
+              </tr>
+            )}
+            <tr className={getRowClass(rowIndex)}>
+              {row.map((cell, cellIndex) => (
+                <td key={cellIndex} className="ranking-cell">
+                  {cell}
+                </td>
+              ))}
+            </tr>
+          </React.Fragment>
+        ))}
+      </tbody>
+    </table>
+  );
+
   return (
     <div className="ranking-container">
       <Navigation />
 
       <h1 className="ranking-title">Ranking dos Maiores Pontuadores</h1>
-      <p className="subtitle">Ranking geral dos maiores pontuadores</p>
-
-      {rankingData.length > 0 ? (
-        <table className="ranking-table">
-          <tbody>
-            {rankingData.map((row, rowIndex) => (
-              <React.Fragment key={rowIndex}>
-                {getGifForPosition(rowIndex) && (
-                  <tr>
-                    <td colSpan={row.length} className="ranking-gif-cell">
-                      <img
-                        src={getGifForPosition(rowIndex)}
-                        alt={`Posição ${rowIndex + 1}`}
-                        className="ranking-gif"
-                      />
-                    </td>
-                  </tr>
-                )}
-                <tr className={getRowClass(rowIndex)}>
-                  {row.map((cell, cellIndex) => (
-                    <td key={cellIndex} className="ranking-cell">
-                      {cell}
-                    </td>
-                  ))}
-                </tr>
-              </React.Fragment>
-            ))}
-          </tbody>
-        </table>
+      <p className="subtitle">Ranking dos maiores pontuadores Sênior e Pleno</p>
+      {rankingGeral.length > 0 ? (
+        renderRankingTable(rankingGeral)
       ) : (
-        <p className="ranking-loading">Carregando dados do ranking...</p>
+        <p className="ranking-loading">Carregando ranking geral...</p>
+      )}
+
+      <h2 className="ranking-title" style={{ marginTop: "4rem" }}>
+        Ranking Soft
+      </h2>
+      <p className="subtitle">
+        Ranking dos maiores pontuadores exclusiva da categoria Soft
+      </p>
+      {rankingSoft.length > 0 ? (
+        renderRankingTable(rankingSoft)
+      ) : (
+        <p className="ranking-loading">Carregando ranking Soft...</p>
       )}
 
       <div style={{ marginTop: "6rem" }}></div>

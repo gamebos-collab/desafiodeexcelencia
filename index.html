@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Desafio em Construção</title>
     <style>
+      /* Estilo para o vídeo de fundo */
+      .video-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        z-index: -1; /* Fica atrás do conteúdo */
+        opacity: 0.2; /* Define a opacidade do vídeo */
+      }
+
       body {
         margin: 0;
         padding: 0;
@@ -15,6 +27,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        overflow: hidden; /* Evita rolagem por causa do vídeo */
       }
 
       .popup {
@@ -25,6 +38,7 @@
         text-align: center;
         max-width: 400px;
         animation: fadeIn 1s ease-in-out;
+        z-index: 1; /* Garante que fique acima do vídeo */
       }
 
       .popup h1 {
@@ -57,10 +71,34 @@
     </style>
   </head>
   <body>
+    <!-- Vídeo de fundo: reproduz apenas entre 5s e 15s em loop -->
+    <video id="video-bg" class="video-bg" autoplay muted playsinline>
+      <source src="/assets/background.MP4" type="video/mp4" />
+      Seu navegador não suporta vídeo HTML5.
+    </video>
+
     <div class="popup">
       <h1>🚧 Desafio em Construção</h1>
       <p>Estamos trabalhando para trazer uma experiência incrível.</p>
       <img src="/assets/bbmlogistica.png" alt="Em construção" />
     </div>
+
+    <script>
+      const video = document.getElementById("video-bg");
+      const startTime = 5; // segundos
+      const endTime = 30; // segundos
+
+      video.addEventListener("loadedmetadata", () => {
+        video.currentTime = startTime;
+        video.play();
+      });
+
+      video.addEventListener("timeupdate", () => {
+        if (video.currentTime >= endTime) {
+          video.currentTime = startTime;
+          video.play();
+        }
+      });
+    </script>
   </body>
 </html>

@@ -1,0 +1,59 @@
+.card-brilhante {
+  position: relative;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: #2a0845;
+  color: white;
+  z-index: 0;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(184, 14, 241, 0.6);
+  animation: neonPulse 2.5s ease-in-out infinite;
+}
+
+/* Contorno animado com brilho neon */
+.card-brilhante::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 14px;
+  background: linear-gradient(45deg, #ff00cc, #3333ff, #ff00cc);
+  z-index: -1;
+  animation: neonBorder 4s linear infinite;
+}
+
+/* Máscara interna para manter o fundo visível */
+.card-brilhante::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2a0845;
+  border-radius: 12px;
+  z-index: -1;
+}
+
+/* Pulso suave do brilho */
+@keyframes neonPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 12px rgba(184, 14, 241, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(184, 14, 241, 1);
+  }
+}
+
+/* Movimento sutil no contorno */
+@keyframes neonBorder {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
