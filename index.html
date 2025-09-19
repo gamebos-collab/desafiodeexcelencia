@@ -13,8 +13,8 @@
         width: 100vw;
         height: 100vh;
         object-fit: cover;
-        z-index: -1; /* Fica atrás do conteúdo */
-        opacity: 0.2; /* Define a opacidade do vídeo */
+        z-index: -1;
+        opacity: 0.2;
       }
 
       body {
@@ -27,7 +27,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        overflow: hidden; /* Evita rolagem por causa do vídeo */
+        overflow: hidden;
+        position: relative;
       }
 
       .popup {
@@ -38,7 +39,7 @@
         text-align: center;
         max-width: 400px;
         animation: fadeIn 1s ease-in-out;
-        z-index: 1; /* Garante que fique acima do vídeo */
+        z-index: 1;
       }
 
       .popup h1 {
@@ -58,6 +59,16 @@
         margin-top: 20px;
       }
 
+      .footer {
+        position: fixed;
+        bottom: 10px;
+        width: 100%;
+        text-align: center;
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.5);
+        z-index: 2;
+      }
+
       @keyframes fadeIn {
         from {
           opacity: 0;
@@ -71,7 +82,6 @@
     </style>
   </head>
   <body>
-    <!-- Vídeo de fundo: reproduz apenas entre 5s e 15s em loop -->
     <video id="video-bg" class="video-bg" autoplay muted playsinline>
       <source src="/assets/background.MP4" type="video/mp4" />
       Seu navegador não suporta vídeo HTML5.
@@ -83,10 +93,14 @@
       <img src="/assets/bbmlogistica.png" alt="Em construção" />
     </div>
 
+    <div class="footer">
+      &copy; 2025 Desenvolved by Felipe Ferreira Cauã Pivotto e Endrigo Boreli.
+    </div>
+
     <script>
       const video = document.getElementById("video-bg");
-      const startTime = 5; // segundos
-      const endTime = 30; // segundos
+      const startTime = 5;
+      const endTime = 30;
 
       video.addEventListener("loadedmetadata", () => {
         video.currentTime = startTime;
