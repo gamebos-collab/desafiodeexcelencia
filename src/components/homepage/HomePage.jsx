@@ -20,7 +20,7 @@ export default function HomePage() {
         const workbook = XLSX.read(buffer, { type: "array" });
         const sheet = workbook.Sheets["Planilha2"];
         const json = XLSX.utils.sheet_to_json(sheet, {
-          range: "F11:K29",
+          range: "F20:K38",
           header: 1,
           blankrows: false,
           defval: 0,

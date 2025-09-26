@@ -8,9 +8,13 @@ export default function EquipesPage() {
   const [equipeSelecionada, setEquipeSelecionada] = useState(null);
   const [descricaoMapeada, setDescricaoMapeada] = useState({});
   const [pontuacaoEquipe, setPontuacaoEquipe] = useState({});
-
   const [pontuacoesPorCentralizadora, setPontuacoesPorCentralizadora] =
     useState({});
+  const [celulasPorCentralizadora, setCelulasPorCentralizadora] = useState({});
+  const [
+    celulasInvertidoPorCentralizadora,
+    setCelulasInvertidoPorCentralizadora,
+  ] = useState({}); // NOVO
 
   useEffect(() => {
     fetch(`/gamekpi.xlsx?v=${Date.now()}`)
@@ -20,37 +24,121 @@ export default function EquipesPage() {
         const sheet = workbook.Sheets["Planilha2"];
         const json = XLSX.utils.sheet_to_json(sheet, { range: "A1:D100" });
 
-        // ✅ Corrigido para garantir que valores 0 sejam preservados
+        // Função para pegar valor seguro
         const getValorSeguro = (celula) =>
           celula?.v !== undefined && celula?.v !== null ? celula.v : 0;
 
         // Extrai pontuações específicas por centralizadora
         const pontuacoes = {
-          CPN: sheet["G2"]?.v !== undefined ? sheet["G2"].v : 0,
-          POA: sheet["G3"]?.v !== undefined ? sheet["G3"].v : 0,
-          SAO: sheet["G4"]?.v !== undefined ? sheet["G4"].v : 0,
-          CWB: sheet["G5"]?.v !== undefined ? sheet["G5"].v : 0,
-          BLU: sheet["O10"]?.v !== undefined ? sheet["O10"].v : 0,
-          VIX: sheet["G7"]?.v !== undefined ? sheet["G7"].v : 0,
-          GRU: sheet["K2"]?.v !== undefined ? sheet["K2"].v : 0,
-          CXS: sheet["K3"]?.v !== undefined ? sheet["K3"].v : 0,
-          BHZ: sheet["K4"]?.v !== undefined ? sheet["K4"].v : 0,
-          PPY: sheet["K5"]?.v !== undefined ? sheet["K5"].v : 0,
-          LDA: sheet["O8"]?.v !== undefined ? sheet["O8"].v : 0,
-          CAS: sheet["O9"]?.v !== undefined ? sheet["O9"].v : 0,
-          FLN: sheet["O2"]?.v !== undefined ? sheet["O2"].v : 0,
-          BAU: sheet["O3"]?.v !== undefined ? sheet["O3"].v : 0,
-          SOR: sheet["O4"]?.v !== undefined ? sheet["O4"].v : 0,
-          JVL: sheet["O5"]?.v !== undefined ? sheet["O5"].v : 0,
-          SMA: sheet["O6"]?.v !== undefined ? sheet["O6"].v : 0,
-          RIP: sheet["O7"]?.v !== undefined ? sheet["O7"].v : 0,
+          CPN: sheet["H4"]?.v !== undefined ? sheet["H4"].v : 0,
+          POA: sheet["H2"]?.v !== undefined ? sheet["H2"].v : 0,
+          SAO: sheet["H3"]?.v !== undefined ? sheet["H3"].v : 0,
+          CWB: sheet["H5"]?.v !== undefined ? sheet["H5"].v : 0,
+          BLU: sheet["P9"]?.v !== undefined ? sheet["P9"].v : 0,
+          VIX: sheet["H6"]?.v !== undefined ? sheet["H6"].v : 0,
+          GRU: sheet["L5"]?.v !== undefined ? sheet["L5"].v : 0,
+          CXS: sheet["L3"]?.v !== undefined ? sheet["L3"].v : 0,
+          BHZ: sheet["L2"]?.v !== undefined ? sheet["L2"].v : 0,
+          PPY: sheet["L4"]?.v !== undefined ? sheet["L4"].v : 0,
+          LDA: sheet["P7"]?.v !== undefined ? sheet["P7"].v : 0,
+          CAS: sheet["P3"]?.v !== undefined ? sheet["P3"].v : 0,
+          FLN: sheet["P5"]?.v !== undefined ? sheet["P5"].v : 0,
+          BAU: sheet["P10"]?.v !== undefined ? sheet["P10"].v : 0,
+          SOR: sheet["P4"]?.v !== undefined ? sheet["P4"].v : 0,
+          JVL: sheet["P6"]?.v !== undefined ? sheet["P6"].v : 0,
+          SMA: sheet["P8"]?.v !== undefined ? sheet["P8"].v : 0,
+          RIP: sheet["P2"]?.v !== undefined ? sheet["P2"].v : 0,
         };
         setPontuacoesPorCentralizadora(pontuacoes);
 
-        // ✅ Corrigido para preservar valores 0 nas pontuações de equipe
+        // Bloco padrão (normal)
+        const celulas = {
+          POA: {
+            valor1: sheet["F8"] ? sheet["F8"].v : "",
+            valor2: sheet["H8"] ? sheet["H8"].v : "",
+          },
+          SAO: {
+            valor1: sheet["F9"] ? sheet["F9"].v : "",
+            valor2: sheet["H9"] ? sheet["H9"].v : "",
+          },
+          CPN: {
+            valor1: sheet["F10"] ? sheet["F10"].v : "",
+            valor2: sheet["H10"] ? sheet["H10"].v : "",
+          },
+          CWB: {
+            valor1: sheet["F11"] ? sheet["F11"].v : "",
+            valor2: sheet["H11"] ? sheet["H11"].v : "",
+          },
+          VIX: {
+            valor1: sheet["F12"] ? sheet["F12"].v : "",
+            valor2: sheet["H12"] ? sheet["H12"].v : "",
+          },
+          GRU: {
+            valor1: sheet["J10"] ? sheet["J10"].v : "",
+            valor2: sheet["L10"] ? sheet["L10"].v : "",
+          },
+          CXS: {
+            valor1: sheet["J8"] ? sheet["J8"].v : "",
+            valor2: sheet["L8"] ? sheet["L8"].v : "",
+          },
+          BHZ: {
+            valor1: sheet["J7"] ? sheet["J7"].v : "",
+            valor2: sheet["L7"] ? sheet["L7"].v : "",
+          },
+          PPY: {
+            valor1: sheet["J9"] ? sheet["J9"].v : "",
+            valor2: sheet["L9"] ? sheet["L9"].v : "",
+          },
+          // Adicione outras centralizadoras conforme necessário
+        };
+        setCelulasPorCentralizadora(celulas);
+
+        // Bloco invertido (F13 e H13 para POA, outras centralizadoras conforme desejar)
+        const celulasInvertido = {
+          POA: {
+            valor1: sheet["F13"] ? sheet["F13"].v : "",
+            valor2: sheet["H13"] ? sheet["H13"].v : "",
+          },
+          SAO: {
+            valor1: sheet["F14"] ? sheet["F14"].v : "",
+            valor2: sheet["H14"] ? sheet["H14"].v : "",
+          },
+          CPN: {
+            valor1: sheet["F15"] ? sheet["F15"].v : "",
+            valor2: sheet["H15"] ? sheet["H15"].v : "",
+          },
+          CWB: {
+            valor1: sheet["F16"] ? sheet["F16"].v : "",
+            valor2: sheet["H16"] ? sheet["H16"].v : "",
+          },
+          VIX: {
+            valor1: sheet["F17"] ? sheet["F17"].v : "",
+            valor2: sheet["H17"] ? sheet["H17"].v : "",
+          },
+          GRU: {
+            valor1: sheet["J14"] ? sheet["J14"].v : "",
+            valor2: sheet["L14"] ? sheet["L14"].v : "",
+          },
+          CXS: {
+            valor1: sheet["J12"] ? sheet["J12"].v : "",
+            valor2: sheet["L12"] ? sheet["L12"].v : "",
+          },
+          BHZ: {
+            valor1: sheet["J11"] ? sheet["J11"].v : "",
+            valor2: sheet["L11"] ? sheet["L11"].v : "",
+          },
+          PPY: {
+            valor1: sheet["J13"] ? sheet["J13"].v : "",
+            valor2: sheet["L13"] ? sheet["L13"].v : "",
+          },
+          // Adicione outros parceiros conforme necessário
+        };
+        setCelulasInvertidoPorCentralizadora(celulasInvertido);
+
+        // Pontuação de equipe
         const pontuacoesEquipe = {
-          Sênior: getValorSeguro(sheet["H8"]),
-          Pleno: getValorSeguro(sheet["L8"]),
+          Sênior: getValorSeguro(sheet["H18"]),
+          Pleno: getValorSeguro(sheet["L15"]),
           Soft: getValorSeguro(sheet["P11"]),
         };
         setPontuacaoEquipe(pontuacoesEquipe);
@@ -159,6 +247,78 @@ export default function EquipesPage() {
     textOverflow: "ellipsis",
   };
 
+  // Função para renderizar o bloco das duas células extras (normal)
+  function renderCelulasExtras() {
+    if (!membroSelecionado) return null;
+    const chave = membroSelecionado.nome?.trim().toUpperCase();
+    const celulas = celulasPorCentralizadora[chave];
+    if (!celulas) return null;
+    return (
+      <div
+        style={{
+          position: "absolute",
+          top: "20px",
+          right: "20px",
+          width: "200px",
+          height: "100px",
+          borderRadius: "8px",
+          boxShadow: "0 0 8px rgba(241, 235, 235, 0.84)",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          fontSize: "15px",
+          color: "#ebe8e8ff",
+          zIndex: 1000,
+          padding: "8px",
+        }}
+      >
+        <div>
+          <span>{celulas.valor1}</span>
+        </div>
+        <div>
+          <span>{celulas.valor2}</span>
+        </div>
+      </div>
+    );
+  }
+
+  // Função para renderizar o bloco das duas células invertidas
+  function renderCelulasExtrasInvertido() {
+    if (!membroSelecionado) return null;
+    const chave = membroSelecionado.nome?.trim().toUpperCase();
+    const celulas = celulasInvertidoPorCentralizadora[chave];
+    if (!celulas) return null;
+    return (
+      <div
+        style={{
+          position: "absolute",
+          top: "20px",
+          left: "20px",
+          width: "200px",
+          height: "100px",
+          borderRadius: "8px",
+          boxShadow: "0 0 8px rgba(241, 235, 235, 0.84)",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          fontSize: "15px",
+          color: "#ebe8e8ff",
+          zIndex: 1000,
+          padding: "8px",
+        }}
+      >
+        <div>
+          <span>{celulas.valor1}</span>
+        </div>
+        <div>
+          <span>{celulas.valor2}</span>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div
       style={{
@@ -234,6 +394,10 @@ export default function EquipesPage() {
             }}
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Bloco das células extras normal (direita) */}
+            {renderCelulasExtras()}
+            {/* Bloco das células invertidas (esquerda) */}
+            {renderCelulasExtrasInvertido()}
             <div
               style={{
                 position: "sticky",
@@ -248,29 +412,30 @@ export default function EquipesPage() {
                 alt={membroSelecionado.nome}
                 style={{ width: "125px", borderRadius: "10%" }}
               />
-              <h2 style={{ marginTop: "12px", color: "#fff" }}>
-                {membroSelecionado.nome}
-              </h2>
-              <p style={{ color: "#fff" }}>
-                Equipe: <strong>{equipeSelecionada.nome}</strong>
-              </p>
-              <p style={{ color: "#fff" }}>
-                 Pontuação:{" "}
-                <strong>
-                  {Number.isFinite(
-                    pontuacoesPorCentralizadora[
-                      membroSelecionado.nome.trim().toUpperCase()
-                    ]
-                  )
-                    ? pontuacoesPorCentralizadora[
+              <div style={{ textAlign: "center" }}>
+                <h2 style={{ marginTop: "12px", color: "#fff" }}>
+                  {membroSelecionado.nome}
+                </h2>
+                <p style={{ color: "#fff" }}>
+                  Equipe: <strong>{equipeSelecionada.nome}</strong>
+                </p>
+                <p style={{ color: "#fff" }}>
+                   Pontuação:{" "}
+                  <strong>
+                    {Number.isFinite(
+                      pontuacoesPorCentralizadora[
                         membroSelecionado.nome.trim().toUpperCase()
                       ]
-                    : 0}{" "}
-                  pontos
-                </strong>
-              </p>
+                    )
+                      ? pontuacoesPorCentralizadora[
+                          membroSelecionado.nome.trim().toUpperCase()
+                        ]
+                      : 0}{" "}
+                    pontos
+                  </strong>
+                </p>
+              </div>
             </div>
-
             <div
               style={{
                 marginTop: "24px",

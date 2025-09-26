@@ -22,7 +22,7 @@ const Ranking = () => {
 
         // Ranking Soft (nova faixa da planilha)
         const soft = XLSX.utils.sheet_to_json(sheet, {
-          range: "A38:D40", // ajuste conforme a posição dos dados
+          range: "A73:D75", // ajuste conforme a posição dos dados
           header: 1,
         });
 
