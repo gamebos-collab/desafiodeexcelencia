@@ -2,11 +2,66 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <title>Desafio de Excelência</title>
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desafio em Construção</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #160125, #3c1053);
+        font-family: Arial, sans-serif;
+        color: #fff;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .popup {
+        background-color: #2a0845;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        text-align: center;
+        max-width: 400px;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      .popup h1 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        color: #f9a826;
+      }
+
+      .popup p {
+        font-size: 1rem;
+        margin-bottom: 10px;
+      }
+
+      .popup img {
+        max-width: 100%;
+        border-radius: 8px;
+        margin-top: 20px;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <div class="popup">
+      <h1>🚧 Desafio em Construção</h1>
+      <p>Estamos trabalhando para trazer uma experiência incrível.</p>
+      <img src="/assets/bbmlogistica.png" alt="Em construção" />
+    </div>
+     
   </body>
 </html>
