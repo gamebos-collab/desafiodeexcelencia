@@ -433,6 +433,16 @@ export default function EquipesPage() {
                       : 0}{" "}
                     pontos
                   </strong>
+                  <p
+                    style={{
+                      color: "#ff0000ff",
+                      fontFamily: "Arial, sans-serif",
+                      fontSize: 10,
+                    }}
+                  >
+                    Parceiros e operacional, NÃO são contabilizados na pontuação
+                    geral da equipe.
+                  </p>
                 </p>
               </div>
             </div>
