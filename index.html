@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Desafio em Construção</title>
     <style>
+      /* Estilo para o vídeo de fundo */
+      .video-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        z-index: -1;
+        opacity: 0.2;
+      }
+
       body {
         margin: 0;
         padding: 0;
@@ -15,6 +27,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        overflow: hidden;
+        position: relative;
       }
 
       .popup {
@@ -25,6 +39,7 @@
         text-align: center;
         max-width: 400px;
         animation: fadeIn 1s ease-in-out;
+        z-index: 1;
       }
 
       .popup h1 {
@@ -44,6 +59,16 @@
         margin-top: 20px;
       }
 
+      .footer {
+        position: fixed;
+        bottom: 10px;
+        width: 100%;
+        text-align: center;
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.5);
+        z-index: 2;
+      }
+
       @keyframes fadeIn {
         from {
           opacity: 0;
@@ -57,10 +82,37 @@
     </style>
   </head>
   <body>
+    <video id="video-bg" class="video-bg" autoplay muted playsinline>
+      <source src="/assets/background.MP4" type="video/mp4" />
+      Seu navegador não suporta vídeo HTML5.
+    </video>
+
     <div class="popup">
       <h1>🚧 Desafio em Construção</h1>
       <p>Estamos trabalhando para trazer uma experiência incrível.</p>
       <img src="/assets/bbmlogistica.png" alt="Em construção" />
     </div>
+
+    <div class="footer">
+      &copy; 2025 BBM Logística. Todos os direitos reservados.
+    </div>
+
+    <script>
+      const video = document.getElementById("video-bg");
+      const startTime = 5;
+      const endTime = 15;
+
+      video.addEventListener("loadedmetadata", () => {
+        video.currentTime = startTime;
+        video.play();
+      });
+
+      video.addEventListener("timeupdate", () => {
+        if (video.currentTime >= endTime) {
+          video.currentTime = startTime;
+          video.play();
+        }
+      });
+    </script>
   </body>
 </html>
