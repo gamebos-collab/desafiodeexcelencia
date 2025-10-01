@@ -6,8 +6,8 @@ const conquistas = [
   {
     nome: "Zero B.O Acima de 15 Dias",
     descricao: "",
-    icone: "/assets/conquistadesbloqueada.png",
-    desbloqueada: true,
+    icone: "/assets/conquistabloqueada.png",
+    desbloqueada: false,
   },
   {
     nome: "Zero B.O Até de 15 Dias",
@@ -41,12 +41,6 @@ const conquistas = [
   },
   {
     nome: "Zero B.O Clientes em Risco",
-    descricao: "",
-    icone: "/assets/conquistabloqueada.png",
-    desbloqueada: false,
-  },
-  {
-    nome: "Zero B.O.",
     descricao: "",
     icone: "/assets/conquistabloqueada.png",
     desbloqueada: false,
