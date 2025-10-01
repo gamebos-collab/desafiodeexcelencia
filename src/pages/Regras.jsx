@@ -83,7 +83,7 @@ function Regras() {
                 textAlign: "center",
               }}
             >
-              ✅ BAIXAS CONSIDERADAS PROCEDENTES
+              ✅ Desafio Normal – Regras de Pontuação Positiva
             </h3>
             <p
               style={{
@@ -95,8 +95,8 @@ function Regras() {
             >
               <br />
               <br />
-              Somente serão pontuadas as baixas que atendam a pelo menos um dos
-              critérios abaixo:
+              Somente serão contabilizadas como pontuação positiva as baixas
+              realizadas conforme os critérios abaixo:
               <br />
               <br />
             </p>
@@ -108,7 +108,7 @@ function Regras() {
                 <i>Volume aceito pelo destinatário (Parecer 9);</i>
               </li>
               <li>
-                <i>Tratativa correta do BO, sem tentativa de baixa indevida;</i>
+                <i>Finalizado (Parecer 6) ;</i>
               </li>
             </ul>
 
@@ -122,17 +122,14 @@ function Regras() {
                 fontFamily: "sans-serif",
               }}
             >
-              PROCESSO FINALIZADO COM UM DOS SEGUINTES PARECERES:
+              📌 As baixas são contabilizadas por USUÁRIO que realizou a
+              tratativa, e não por Centralizadora, garantindo a efetividade de
+              cada setor responsável.
+              <br />
+              <br />
+              ⚠️ Atenção: Baixas realizadas pelo Time Operacional e pelos
+              Parceiros não geram pontuação positiva.
             </h3>
-            <ul style={{ color: "#ffffffff", fontFamily: "sans-serif" }}>
-              <li>
-                <i>Parecer 29 – Solicitação/Avaliação e Baixa ao CNO;</i>
-              </li>
-                          
-              <li>
-                <i>Parecer 37 – Solicitação de Aprovação CNO.</i>
-              </li>
-            </ul>
 
             <h3
               style={{
@@ -144,7 +141,8 @@ function Regras() {
                 fontFamily: "sans-serif",
               }}
             >
-              <br />⚠ PENALIDADES
+              <br />
+              🔄 Desafio Invertido – Regras de Penalidade
             </h3>
             <p
               style={{
@@ -156,34 +154,38 @@ function Regras() {
             >
               <br />
               <br />
-              Para garantir a integridade do jogo, as seguintes ocorrências
-              resultarão em perda de pontos:
+              Cada SPP/Centralizadora inicia com 1.000 pontos, e será penalizada
+              conforme o tempo em aberto do B.O.:
               <br />
               <br />
             </p>
             <ul style={{ color: "#ffffffff", fontFamily: "sans-serif" }}>
               <li>
-                <i>Reversão de BO indevida →</i>
+                <i>5 a 10 dias em aberto →</i>
                 <span style={{ background: "#ff0000ff" }}>
                   {" "}
-                  <b>– 3 Pontos.</b>
+                  <b>– 1 Ponto.</b>
                 </span>
               </li>
               <li>
-                <i>Baixa de BO indevida →</i>
+                <i>10 a 15 dias em aberto →</i>
                 <span style={{ background: "#ff0000ff" }}>
                   {" "}
-                  <b> – 6 Pontos.</b>
+                  <b> – 2 Pontos.</b>
                 </span>
               </li>
               <li>
-                <i>
-                  Retenção intencional de BO para maior ganho de pontuação
-                  (segurar B.O até atingir a margem <br /> maior de dias) →{" "}
-                </i>
+                <i>15 dias em aberto → </i>
                 <span style={{ background: "#ff0000ff" }}>
                   {" "}
-                  <b> – 10 Pontos.</b>
+                  <b> – 3 Pontos.</b>
+                </span>
+              </li>
+              <li>
+                <i>Acima de 15 dias em aberto → </i>
+                <span style={{ background: "#ff0000ff" }}>
+                  {" "}
+                  <b> – 1 ponto para cada dia adicional em aberto.</b>
                 </span>
               </li>
             </ul>
@@ -199,31 +201,59 @@ function Regras() {
               }}
             >
               <br />
-              Critérios de pontuação positiva
+              Para garantir a integridade do Desafio, as seguintes ocorrências
+              resultarão em perda de pontos imediata:
             </h3>
             <ul style={{ color: "#ffffffff", fontFamily: "sans-serif" }}>
               <li>
-                <i>BO Tratado/Baixado com mais de 15 dias em aberto →</i>
-                <span style={{ background: "#00ff0dff" }}>
+                <i>Reversão de BO indevida →</i>
+                <span style={{ background: "#ff0000ff" }}>
                   {" "}
-                  <b>3 pontos</b>
+                  <b>-3 pontos</b>
                 </span>
               </li>
               <li>
-                <i>BO Tratado/Baixado entre 10 e 15 dias em aberto →</i>
-                <span style={{ background: "#00ff0dff" }}>
+                <i>Baixa de BO indevida →</i>
+                <span style={{ background: "#ff0000ff" }}>
                   {" "}
-                  <b>2 pontos</b>
+                  <b>-6 pontos</b>
                 </span>
               </li>
               <li>
-                <i>BO Tratado/Baixado com até 10 dias em aberto →</i>
-                <span style={{ background: "#00ff0dff" }}>
+                <i>
+                  Retenção intencional de BO (segurar o B.O. para tentar
+                  manipular pontuação) →
+                </i>
+                <span style={{ background: "#ff0000ff" }}>
                   {" "}
-                  <b>1 ponto.</b>
+                  <b>-10 ponto.</b>
+                  <h3
+                    style={{
+                      fontSize: "2rem",
+                      fontWeight: 700,
+                      marginTop: 28,
+                      color: "#ffffffff",
+                      textAlign: "center",
+                      fontFamily: "Arial, sans-serif",
+                    }}
+                  >
+                    <br />
+                    🏅 Conquistas
+                  </h3>
                   <br />
                   <br />
                 </span>
+                <i>
+                  No site do desafio haverá uma aba de Conquistas. As medalhas
+                  de merecimento serão concedidas exclusivamente às
+                  centralizadoras que atingirem os requisitos ao final do
+                  período vigente do desafio.
+                  <br />
+                  <br />
+                  👉 Lembre-se: O Desafio de Excelência não é apenas sobre
+                  pontuação, mas sim sobre prevenção, qualidade na tratativa e
+                  eliminação das falhas operacionais.
+                </i>
               </li>
             </ul>
           </div>
