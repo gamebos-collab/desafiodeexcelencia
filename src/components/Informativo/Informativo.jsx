@@ -122,7 +122,15 @@ export default function Informativo() {
                 fontFamily: "sans-serif",
               }}
             >
-              Nenhuma atualização até o momento.
+              Penalização Por Reversão Indevida do <b>B.O 99-867 | NF 116443</b>
+              <br /> Informamos que foi aplicada uma penalização ao colaborador
+              <b> Orlando Alberti (Usuário: CWBORLAND)</b> devido à ocorrência
+              registrada no dia 03/10, referente à reversão indevida de B.O ao
+              parceiro ADR, sem justificativa conforme os procedimentos
+              internos. Como resultado, foi atribuída uma penalidade de{" "}
+              <b>-3 pontos</b> no sistema de desempenho. Reforçamos a
+              importância de seguir os protocolos estabelecidos para garantir a
+              integridade dos processos e a qualidade das operações.
             </p>
             <br />
             <img
