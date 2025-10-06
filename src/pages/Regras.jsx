@@ -111,14 +111,14 @@ function Regras() {
               <i>Finalizado (Parecer 6) ;</i>
 
               <li>
-                <i>5 a 10 dias em aberto →</i>
+                <i>6 a 10 dias em aberto →</i>
                 <span style={{ background: "#00ff0dff" }}>
                   {" "}
                   <b> 1 Ponto.</b>
                 </span>
               </li>
               <li>
-                <i>10 a 15 dias em aberto → </i>
+                <i>11 a 15 dias em aberto → </i>
                 <span style={{ background: "#00ff0dff" }}>
                   {" "}
                   <b> 2 Pontos.</b>
