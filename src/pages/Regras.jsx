@@ -107,8 +107,29 @@ function Regras() {
               <li>
                 <i>Volume aceito pelo destinatário (Parecer 9);</i>
               </li>
+
+              <i>Finalizado (Parecer 6) ;</i>
+
               <li>
-                <i>Finalizado (Parecer 6) ;</i>
+                <i>10 a 15 dias em aberto →</i>
+                <span style={{ background: "#00ff0dff" }}>
+                  {" "}
+                  <b> 1 Ponto.</b>
+                </span>
+              </li>
+              <li>
+                <i>15 dias em aberto → </i>
+                <span style={{ background: "#00ff0dff" }}>
+                  {" "}
+                  <b> 2 Pontos.</b>
+                </span>
+              </li>
+              <li>
+                <i>Acima de 15 dias em aberto → </i>
+                <span style={{ background: "#00ff0dff" }}>
+                  {" "}
+                  <b> 3 pontos.</b>
+                </span>
               </li>
             </ul>
 
