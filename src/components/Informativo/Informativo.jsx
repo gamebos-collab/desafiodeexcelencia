@@ -122,15 +122,45 @@ export default function Informativo() {
                 fontFamily: "sans-serif",
               }}
             >
-              Penalização Por Reversão Indevida do <b>B.O 99-867 | NF 116443</b>
-              <br /> Informamos que foi aplicada uma penalização ao colaborador
-              <b> Orlando Alberti (Usuário: CWBORLAND)</b> devido à ocorrência
-              registrada no dia 03/10, referente à reversão indevida de B.O ao
-              parceiro ADR, sem justificativa conforme os procedimentos
-              internos. Como resultado, foi atribuída uma penalidade de{" "}
-              <b>-3 pontos</b> no sistema de desempenho. Reforçamos a
-              importância de seguir os protocolos estabelecidos para garantir a
-              integridade dos processos e a qualidade das operações.
+              <div>
+                <img
+                  src="/assets/equipesenior/cwb.jpg" // troque pelo caminho da sua imagem
+                  alt="Ícone"
+                  width="64" // tamanho pequeno, ajuste conforme necessário
+                  style={{ verticalAlign: "middle", marginRight: "8px" }}
+                />
+                Penalização Por Reversão Indevida do{" "}
+                <b>B.O 99-867 | NF 116443</b>
+                <br /> Informamos que foi aplicada uma penalização ao
+                colaborador
+                <b> Orlando Alberti (Usuário: CWBORLAND)</b> devido à ocorrência
+                registrada no dia 03/10, referente à reversão indevida de B.O ao
+                parceiro ADR, sem justificativa conforme os procedimentos
+                internos. Como resultado, foi atribuída uma penalidade de{" "}
+                <b>-3 pontos</b> no sistema de desempenho. Reforçamos a
+                importância de seguir os protocolos estabelecidos para garantir
+                a integridade dos processos e a qualidade das operações.
+              </div>
+              ______________________________________________________________________________________________________________________________
+              <br />
+              <div>
+                <img
+                  src="/assets/equipesenior/sao.jpg" // troque pelo caminho da sua imagem
+                  alt="Ícone"
+                  width="64" // tamanho pequeno, ajuste conforme necessário
+                  style={{ verticalAlign: "middle", marginRight: "8px" }}
+                />
+                Penalização Por Baixa Indevida <b>B.O 6-75650 | NF 2383519</b>
+                <br /> Informamos que foi aplicada uma penalização ao
+                colaborador
+                <b> Milton Machado (Usuário: SAOMILTONC )</b> devido à
+                ocorrência registrada no dia 06/10, referente à baixa indevida
+                de B.O sem justificativa, com falta ainda existente. Como
+                resultado, foi atribuída uma penalidade de <b>-6 pontos</b> no
+                sistema de desempenho. Reforçamos a importância de seguir os
+                protocolos estabelecidos para garantir a integridade dos
+                processos e a qualidade das operações.
+              </div>
             </p>
             <br />
             <img

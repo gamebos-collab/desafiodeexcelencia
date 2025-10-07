@@ -50,7 +50,7 @@ export default function HomePage() {
             color: "#1a1a1a",
             fontWeight: "bold",
             fontSize: "1.3rem", // Ajuste o tamanho do texto do popup aqui
-            padding: "100px 100px", // Ajuste o padding para aumentar/diminuir o popup
+            padding: "60px 100px", // Ajuste o padding para aumentar/diminuir o popup
             borderRadius: "16px",
             boxShadow: "0 0 32px 8px #ff3d0055, 0 2px 6px #ffc40077",
             border: "3px solid #fff",
@@ -65,11 +65,49 @@ export default function HomePage() {
           ⚠️{" "}
           <span style={{ color: "#fff", textShadow: "0 0 8px #ff3d00" }}>
             Atenção!
+            <br />
+            PENALIZAÇÃO APLICADA !
           </span>
           <br />
           <br />
-          PENALIZAÇÃO APLICADA !
-          <br />
+          Equipes Penalizadas
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              gap: "16px", // espaço entre as imagens
+              flexWrap: "wrap", // permite quebrar linha se necessário
+            }}
+          >
+            <img
+              src="/assets/equipesenior/cwb.jpg" // troque pelo caminho da sua imagem
+              alt="Ícone"
+              width="50"
+              style={{
+                objectFit: "cover",
+              }}
+            />
+
+            {/* Espaço reservado para futuras imagens */}
+            <img
+              src="/assets/equipesenior/sao.jpg" // caminho da próxima imagem
+              alt="Icône"
+              width="45"
+              style={{
+                objectFit: "cover",
+              }}
+            />
+            <img
+              src="" // caminho da próxima imagem
+              alt="Próxima imagem"
+              width="34"
+              style={{
+                objectFit: "cover",
+                visibility: "hidden",
+              }}
+            />
+          </div>
           Consulte o INFORMATIVO para entender o motivo.
           <button
             style={{
