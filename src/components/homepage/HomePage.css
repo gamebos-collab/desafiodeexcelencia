@@ -54,3 +54,18 @@
   z-index: -1;
   pointer-events: none;
 }
+@keyframes blinkImage {
+  5% {
+    opacity: 20;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.blinking-image {
+  animation: blinkImage 2s infinite;
+}

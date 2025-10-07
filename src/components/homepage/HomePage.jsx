@@ -76,12 +76,12 @@ export default function HomePage() {
               display: "flex",
               flexDirection: "row",
               alignItems: "center",
-              gap: "16px", // espaço entre as imagens
-              flexWrap: "wrap", // permite quebrar linha se necessário
+              gap: "16px",
+              flexWrap: "wrap",
             }}
           >
             <img
-              src="/assets/equipesenior/cwb.jpg" // troque pelo caminho da sua imagem
+              src="/assets/equipesenior/cwb.jpg"
               alt="Ícone"
               width="50"
               style={{
@@ -89,17 +89,18 @@ export default function HomePage() {
               }}
             />
 
-            {/* Espaço reservado para futuras imagens */}
             <img
-              src="/assets/equipesenior/sao.jpg" // caminho da próxima imagem
-              alt="Icône"
+              src="/assets/equipesenior/sao.jpg"
+              className="blinking-image"
+              alt="Ícone"
               width="45"
               style={{
                 objectFit: "cover",
               }}
             />
+
             <img
-              src="" // caminho da próxima imagem
+              src=""
               alt="Próxima imagem"
               width="34"
               style={{
