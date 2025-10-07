@@ -55,7 +55,7 @@ export default function HomePage() {
             boxShadow: "0 0 32px 8px #ff3d0055, 0 2px 6px #ffc40077",
             border: "3px solid #fff",
             textAlign: "center",
-            maxWidth: "700px", // Reduzido horizontalmente, ajuste conforme quiser
+            maxWidth: "500px", // Reduzido horizontalmente, ajuste conforme quiser
             width: "90vw", // Responsivo, mas limitado pelo maxWidth
             letterSpacing: "1px",
             animation: "shake 1.2s infinite",

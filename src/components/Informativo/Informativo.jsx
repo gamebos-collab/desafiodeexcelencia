@@ -126,7 +126,7 @@ export default function Informativo() {
                 <img
                   src="/assets/equipesenior/cwb.jpg" // troque pelo caminho da sua imagem
                   alt="Ícone"
-                  width="64" // tamanho pequeno, ajuste conforme necessário
+                  width="50" // tamanho pequeno, ajuste conforme necessário
                   style={{ verticalAlign: "middle", marginRight: "8px" }}
                 />
                 Penalização Por Reversão Indevida do{" "}
@@ -147,7 +147,7 @@ export default function Informativo() {
                 <img
                   src="/assets/equipesenior/sao.jpg" // troque pelo caminho da sua imagem
                   alt="Ícone"
-                  width="64" // tamanho pequeno, ajuste conforme necessário
+                  width="45" // tamanho pequeno, ajuste conforme necessário
                   style={{ verticalAlign: "middle", marginRight: "8px" }}
                 />
                 Penalização Por Baixa Indevida <b>B.O 6-75650 | NF 2383519</b>
