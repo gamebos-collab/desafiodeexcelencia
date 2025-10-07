@@ -42,7 +42,7 @@ export default function HomePage() {
           transition={{ duration: 0.45, type: "spring" }}
           style={{
             position: "fixed",
-            top: "30%", // Centraliza verticalmente
+            top: "15%", // Centraliza verticalmente
             left: "30%", // Centraliza horizontalmente
             transform: "translate(-50%, -50%)", // Centralização absoluta
             zIndex: 999999, // Garante que está na frente de tudo
@@ -55,7 +55,7 @@ export default function HomePage() {
             boxShadow: "0 0 32px 8px #ff3d0055, 0 2px 6px #ffc40077",
             border: "3px solid #fff",
             textAlign: "center",
-            maxWidth: "500px", // Reduzido horizontalmente, ajuste conforme quiser
+            maxWidth: "600px", // Reduzido horizontalmente, ajuste conforme quiser
             width: "90vw", // Responsivo, mas limitado pelo maxWidth
             letterSpacing: "1px",
             animation: "shake 1.2s infinite",
