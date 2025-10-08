@@ -143,23 +143,40 @@ export default function Informativo() {
               </div>
               ______________________________________________________________________________________________________________________________
               <br />
-              <div>
-                <img
-                  src="/assets/equipesenior/sao.jpg" // troque pelo caminho da sua imagem
-                  alt="Ícone"
-                  width="45" // tamanho pequeno, ajuste conforme necessário
-                  style={{ verticalAlign: "middle", marginRight: "8px" }}
-                />
-                Penalização Por Baixa Indevida <b>B.O 6-75650 | NF 2383519</b>
-                <br /> Informamos que foi aplicada uma penalização ao
-                colaborador
-                <b> Milton Machado (Usuário: SAOMILTONC )</b> devido à
-                ocorrência registrada no dia 06/10, referente à baixa indevida
-                de B.O sem justificativa, com falta ainda existente. Como
-                resultado, foi atribuída uma penalidade de <b>-6 pontos</b> no
-                sistema de desempenho. Reforçamos a importância de seguir os
-                protocolos estabelecidos para garantir a integridade dos
-                processos e a qualidade das operações.
+              <div style={{ position: "relative", display: "inline-block" }}>
+                {/* Aviso de Cancelado */}
+                <div
+                  style={{
+                    position: "absolute",
+                    top: "-20px",
+                    left: "400px",
+                    color: "rgba(255, 0, 0, 0.5)", // vermelho com 50% de opacidade
+                    fontSize: "80px",
+                    fontWeight: "bold",
+                    zIndex: 1,
+                    pointerEvents: "none",
+                  }}
+                >
+                  CANCELADO
+                </div>
+
+                {/* Conteúdo original */}
+                <div style={{ position: "relative", zIndex: 0 }}>
+                  <img
+                    src="/assets/equipesenior/sao.jpg"
+                    alt="Ícone"
+                    width="45"
+                    style={{ verticalAlign: "middle", marginRight: "8px" }}
+                  />
+                  Penalização Por Baixa Indevida <b>B.O 6-75650 | NF 2383519</b>
+                  <br />
+                  Informamos a Retificação da penalização ao
+                  <b> Milton Machado (Usuário: SAOMILTONC)</b> devido à
+                  ocorrência registrada no dia 06/10, referente à baixa indevida
+                  de B.O sem justificativa, o mesmo justificou e através de
+                  documentos foi comprovado a baixa <b>procedente</b>, com isso,
+                  tivemos a penalização CANCELADA.
+                </div>
               </div>
             </p>
             <br />

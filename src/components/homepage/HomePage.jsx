@@ -70,7 +70,7 @@ export default function HomePage() {
           </span>
           <br />
           <br />
-          Equipes Penalizadas
+          Equipe Penalizada
           <div
             style={{
               display: "flex",
@@ -82,6 +82,7 @@ export default function HomePage() {
           >
             <img
               src="/assets/equipesenior/cwb.jpg"
+              className="blinking-image"
               alt="Ícone"
               width="50"
               style={{
@@ -91,11 +92,11 @@ export default function HomePage() {
 
             <img
               src="/assets/equipesenior/sao.jpg"
-              className="blinking-image"
               alt="Ícone"
               width="45"
               style={{
                 objectFit: "cover",
+                visibility: "hidden",
               }}
             />
 
@@ -191,7 +192,7 @@ export default function HomePage() {
             }}
           >
             <p style={{ color: "#ffc400ff" }}>
-              🕒 Última atualização do sistema: 07/10/2025 18:05h
+              🕒 Última atualização do sistema: 08/10/2025 09:26h
             </p>
           </motion.div>
 
