@@ -131,15 +131,14 @@ export default function Informativo() {
                 />
                 Penalização Por Reversão Indevida do{" "}
                 <b>B.O 99-867 | NF 116443</b>
-                <br /> Informamos que foi aplicada uma penalização ao
-                colaborador
-                <b> Orlando Alberti (Usuário: CWBORLAND)</b> devido à ocorrência
-                registrada no dia 03/10, referente à reversão indevida de B.O ao
-                parceiro ADR, sem justificativa conforme os procedimentos
-                internos. Como resultado, foi atribuída uma penalidade de{" "}
-                <b>-3 pontos</b> no sistema de desempenho. Reforçamos a
-                importância de seguir os protocolos estabelecidos para garantir
-                a integridade dos processos e a qualidade das operações.
+                <br /> Informamos que foi aplicada uma penalização a{" "}
+                <b> EQUIPE CWB</b> devido à ocorrência registrada no dia 03/10,
+                referente à reversão indevida de B.O ao parceiro ADR, sem
+                justificativa conforme os procedimentos internos. Como
+                resultado, foi atribuída uma penalidade de <b>-3 pontos</b> no
+                sistema de desempenho. Reforçamos a importância de seguir os
+                protocolos estabelecidos para garantir a integridade dos
+                processos e a qualidade das operações.
               </div>
               ______________________________________________________________________________________________________________________________
               <br />
@@ -169,12 +168,11 @@ export default function Informativo() {
                   />
                   Penalização Por Baixa Indevida <b>B.O 6-75650 | NF 2383519</b>
                   <br />
-                  Informamos a Retificação da penalização ao
-                  <b> Milton Machado (Usuário: SAOMILTONC)</b> devido à
-                  ocorrência registrada no dia 06/10, referente à baixa indevida
-                  de B.O sem justificativa, o mesmo justificou e através de
-                  documentos foi comprovado a baixa <b>procedente</b>, com isso,
-                  tivemos a penalização CANCELADA.
+                  Informamos a Retificação da penalização a equipe de SAO devido
+                  à ocorrência registrada no dia 06/10, referente à baixa
+                  indevida de B.O sem justificativa, o mesmo justificou e
+                  através de documentos foi comprovado a baixa <b>procedente</b>
+                  , com isso, tivemos a penalização CANCELADA.
                 </div>
                 ______________________________________________________________________________________________________________________________
                 <div>
@@ -187,14 +185,14 @@ export default function Informativo() {
                   Penalização Por Reversão Indevida do{" "}
                   <b>B.O 14-31388 | NF 62223</b>
                   <br /> Informamos que foi aplicada uma penalização a
-                  <b> EQUIPE FLN</b> que através do <b>(Usuário: FLNPATRICK)</b>{" "}
-                  praticou a reversão de B.O indevida à ocorrência registrada no
-                  dia 07/10, onde a troca foi por erro de etiquetagem de FLN.
-                  Como resultado, foi atribuída as penalidades de{" "}
+                  <b> EQUIPE FLN</b> pela reversão de B.O indevida à ocorrência
+                  registrada no dia 07/10, onde a troca foi por erro de
+                  etiquetagem de FLN. Como resultado, foi atribuída as
+                  penalidades de{" "}
                   <b>
                     -3 pontos (reversão), -3 pontos (B.O aberto a mais de 15
-                    dias) e -1 ponto (a cada dia) até a data presente 09/10
-                    contabilizados o total de - 26 pontos
+                    dias) e -1 ponto (a cada dia) até a data presente 10/10
+                    contabilizados o total de - 27 pontos
                   </b>{" "}
                   no sistema de desempenho. Reforçamos a importância de seguir
                   os protocolos estabelecidos para garantir a integridade dos
