@@ -198,6 +198,29 @@ export default function Informativo() {
                   os protocolos estabelecidos para garantir a integridade dos
                   processos e a qualidade das operações.
                 </div>
+                ______________________________________________________________________________________________________________________________
+                <div style={{ position: "relative", zIndex: 0 }}>
+                  <img
+                    src="/assets/equipesenior/blu.jpg"
+                    alt="Ícone"
+                    width="45"
+                    style={{ verticalAlign: "middle", marginRight: "8px" }}
+                  />
+                  Penalização Por Baixas Indevidas{" "}
+                  <b>B.O 14-31464 | NF 61189 e B.O 69-6892 | NF 2006473</b>
+                  <br />
+                  Informamos que foi aplicada penalizações a <b>
+                    {" "}
+                    EQUIPE BLU
+                  </b>{" "}
+                  devido às ocorrências registradas no dia 14/10, referente à
+                  baixas indevidas de B.O, com a justificativa de abertura de
+                  novo B.O para o mesmo caso. Como resultado, foi atribuída uma
+                  penalidade de <b>-12 pontos</b> no sistema de desempenho.
+                  Reforçamos a importância de seguir os protocolos estabelecidos
+                  para garantir a integridade dos processos e a qualidade das
+                  operações.
+                </div>
               </div>
             </p>
             <br />
