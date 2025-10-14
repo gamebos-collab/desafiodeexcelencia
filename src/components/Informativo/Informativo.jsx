@@ -213,7 +213,7 @@ export default function Informativo() {
                     {" "}
                     EQUIPE BLU
                   </b>{" "}
-                  devido às ocorrências registradas no dia 14/10, referente à
+                  devido às ocorrências registradas no dia 10/10, referente à
                   baixas indevidas de B.O, com a justificativa de abertura de
                   novo B.O para o mesmo caso. Como resultado, foi atribuída uma
                   penalidade de <b>-12 pontos</b> no sistema de desempenho.
