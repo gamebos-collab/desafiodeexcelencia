@@ -160,9 +160,17 @@ export default function HomePage() {
 
                 <img
                   src="/assets/equipesenior/blu.jpg"
-                  className="blinking-image"
                   alt="Próxima imagem"
                   width="45"
+                  style={{
+                    objectFit: "cover",
+                  }}
+                />
+                <img
+                  src="/assets/equipesenior/cpn.png"
+                  className="blinking-image"
+                  alt="Próxima imagem"
+                  width="50"
                   style={{
                     objectFit: "cover",
                   }}

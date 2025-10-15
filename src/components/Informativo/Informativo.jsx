@@ -221,6 +221,32 @@ export default function Informativo() {
                   para garantir a integridade dos processos e a qualidade das
                   operações.
                 </div>
+                ______________________________________________________________________________________________________________________________
+                <div style={{ position: "relative", zIndex: 0 }}>
+                  <img
+                    src="/assets/equipesenior/cpn.png"
+                    alt="Ícone"
+                    width="45"
+                    style={{ verticalAlign: "middle", marginRight: "8px" }}
+                  />
+                  Penalização Por Baixas Indevidas{" "}
+                  <b>
+                    B.O 78-3984 | NF 6546793, B.O 70-31236 | NF 16019068 e B.O
+                    70-31230 | NF 745638
+                  </b>
+                  <br />
+                  Informamos que foi aplicada penalizações a <b>
+                    {" "}
+                    EQUIPE CPN
+                  </b>{" "}
+                  devido às ocorrências registradas no dia 14/10 e 15/10,
+                  referente à baixas e reverão indevidas de B.O, sem
+                  justificativa. Como resultado, foi atribuída uma penalidade de{" "}
+                  <b>-15 pontos</b> no sistema de desempenho. Reforçamos a
+                  importância de seguir os protocolos estabelecidos para
+                  garantir a integridade dos processos e a qualidade das
+                  operações.
+                </div>
               </div>
             </p>
             <br />
