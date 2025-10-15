@@ -191,8 +191,8 @@ export default function Informativo() {
                   penalidades de{" "}
                   <b>
                     -3 pontos (reversão), -3 pontos (B.O aberto a mais de 15
-                    dias) e -1 ponto (a cada dia) até a data presente 14/10
-                    contabilizados o total de - 31 pontos
+                    dias) e -1 ponto (a cada dia) até a data presente 15/10
+                    contabilizados o total de - 32 pontos
                   </b>{" "}
                   no sistema de desempenho. Reforçamos a importância de seguir
                   os protocolos estabelecidos para garantir a integridade dos
