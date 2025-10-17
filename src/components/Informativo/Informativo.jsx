@@ -262,7 +262,7 @@ export default function Informativo() {
                     {" "}
                     EQUIPE VIX
                   </b>{" "}
-                  devido às ocorrências registradas no dia 16/10, referente à
+                  devido às ocorrência registrada no dia 16/10, referente à
                   reversão indevidas de B.O, com a justificativa de abertura de
                   de B.O fora do prazo. Como resultado, foi atribuída uma
                   penalidade de <b>-3 pontos</b> no sistema de desempenho.
@@ -285,12 +285,105 @@ export default function Informativo() {
                     {" "}
                     EQUIPE SAO
                   </b>{" "}
-                  devido às ocorrências registradas no dia 13/10, referente à
+                  devido às ocorrência registrada no dia 13/10, referente à
                   reversão indevida de B.O, sem justificativa. Como resultado,
                   foi atribuída uma penalidade de <b>-3 pontos</b> no sistema de
                   desempenho. Reforçamos a importância de seguir os protocolos
                   estabelecidos para garantir a integridade dos processos e a
                   qualidade das operações.
+                </div>
+                ______________________________________________________________________________________________________________________________
+                <div style={{ position: "relative", zIndex: 0 }}>
+                  <img
+                    src="/assets/equipepleno/ppy.png"
+                    alt="Ícone"
+                    width="45"
+                    style={{ verticalAlign: "middle", marginRight: "8px" }}
+                  />
+                  Penalização Por Reversão Indevida{" "}
+                  <b>B.O 20-18031 | NF 84942</b>
+                  <br />
+                  Informamos que foi aplicada penalizações a <b>
+                    {" "}
+                    EQUIPE PPY
+                  </b>{" "}
+                  devido às ocorrência registrada no dia 16/10, referente à
+                  reversão indevida de B.O, reversão para o parceiro em uma
+                  troca de Resp. PPY. Como resultado, foi atribuída uma
+                  penalidade de <b>-3 pontos</b> no sistema de desempenho.
+                  Reforçamos a importância de seguir os protocolos estabelecidos
+                  para garantir a integridade dos processos e a qualidade das
+                  operações.
+                </div>
+                ______________________________________________________________________________________________________________________________
+                <div style={{ position: "relative", zIndex: 0 }}>
+                  <img
+                    src="/assets/equipesenior/poa.jpg"
+                    alt="Ícone"
+                    width="45"
+                    style={{ verticalAlign: "middle", marginRight: "8px" }}
+                  />
+                  Penalização Por Reversão Indevida{" "}
+                  <b>B.O 41-8543 | NF 6552254</b>
+                  <br />
+                  Informamos que foi aplicada penalizações a <b>
+                    {" "}
+                    EQUIPE POA
+                  </b>{" "}
+                  devido às ocorrência registrada no dia 17/10, referente à
+                  reversão indevida de B.O, reversão para o parceiro sem
+                  confirmar carregamento. Como resultado, foi atribuída uma
+                  penalidade de <b>-3 pontos</b> no sistema de desempenho.
+                  Reforçamos a importância de seguir os protocolos estabelecidos
+                  para garantir a integridade dos processos e a qualidade das
+                  operações.
+                </div>
+                ______________________________________________________________________________________________________________________________
+                <div style={{ position: "relative", zIndex: 0 }}>
+                  <img
+                    src="/assets/equipesenior/sao.jpg"
+                    alt="Ícone"
+                    width="45"
+                    style={{ verticalAlign: "middle", marginRight: "8px" }}
+                  />
+                  Penalização Por Reversão Indevida{" "}
+                  <b>B.O 263-2490 | NF 960281</b>
+                  <br />
+                  Informamos que foi aplicada penalizações a <b>
+                    {" "}
+                    EQUIPE SAO
+                  </b>{" "}
+                  devido às ocorrência registrada no dia 17/10, referente à
+                  reversão indevida de B.O, reversão para o parceiro sem
+                  confirmar carregamento. Como resultado, foi atribuída uma
+                  penalidade de <b>-3 pontos</b> no sistema de desempenho.
+                  Reforçamos a importância de seguir os protocolos estabelecidos
+                  para garantir a integridade dos processos e a qualidade das
+                  operações.
+                </div>
+                ______________________________________________________________________________________________________________________________
+                <div style={{ position: "relative", zIndex: 0 }}>
+                  <img
+                    src="/assets/equipesoft/bau.png"
+                    alt="Ícone"
+                    width="45"
+                    style={{ verticalAlign: "middle", marginRight: "8px" }}
+                  />
+                  Penalização Por Reversão Indevida{" "}
+                  <b>B.O 7-93613 | NF 333999</b>
+                  <br />
+                  Informamos que foi aplicada penalizações a <b>
+                    {" "}
+                    EQUIPE BAU
+                  </b>{" "}
+                  devido às ocorrências registradas no dia 07/10 e 16/10,
+                  referente à reversão indevida de B.O, reversão para outra
+                  unidade afim de cobrar ações, erro de leitura de BAU com envio
+                  errado para outra unidade. Como resultado, foi atribuída uma
+                  penalidade de <b>-6 pontos</b> no sistema de desempenho.
+                  Reforçamos a importância de seguir os protocolos estabelecidos
+                  para garantir a integridade dos processos e a qualidade das
+                  operações.
                 </div>
               </div>
             </p>

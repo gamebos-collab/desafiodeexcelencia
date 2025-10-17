@@ -91,7 +91,7 @@ export default function HomePage() {
             }}
           >
             <p style={{ color: "#ffc400ff" }}>
-              🕒 Última atualização do sistema: 17/10/2025 09:09h
+              🕒 Última atualização do sistema: 17/10/2025 17:53h
             </p>
           </motion.div>
 
@@ -188,6 +188,33 @@ export default function HomePage() {
                   className="blinking-image"
                   alt="Próxima imagem"
                   width="50"
+                  style={{
+                    objectFit: "cover",
+                  }}
+                />
+                <img
+                  src="/assets/equipepleno/ppy.png"
+                  className="blinking-image"
+                  alt="Próxima imagem"
+                  width="50"
+                  style={{
+                    objectFit: "cover",
+                  }}
+                />
+                <img
+                  src="/assets/equipesenior/poa.jpg"
+                  className="blinking-image"
+                  alt="Próxima imagem"
+                  width="55"
+                  style={{
+                    objectFit: "cover",
+                  }}
+                />
+                <img
+                  src="/assets/equipesoft/bau.png"
+                  className="blinking-image"
+                  alt="Próxima imagem"
+                  width="45"
                   style={{
                     objectFit: "cover",
                   }}
