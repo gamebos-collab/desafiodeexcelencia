@@ -191,8 +191,8 @@ export default function Informativo() {
                   penalidades de{" "}
                   <b>
                     -3 pontos (reversão), -3 pontos (B.O aberto a mais de 15
-                    dias) e -1 ponto (a cada dia) até a data presente 16/10
-                    contabilizados o total de - 33 pontos
+                    dias) e -1 ponto (a cada dia) até a data presente 17/10
+                    contabilizados o total de - 34 pontos
                   </b>{" "}
                   no sistema de desempenho. Reforçamos a importância de seguir
                   os protocolos estabelecidos para garantir a integridade dos
@@ -229,7 +229,7 @@ export default function Informativo() {
                     width="45"
                     style={{ verticalAlign: "middle", marginRight: "8px" }}
                   />
-                  Penalização Por Baixas Indevidas{" "}
+                  Penalização Por Reversões Indevidas{" "}
                   <b>
                     B.O 78-3984 | NF 6546793, B.O 70-31236 | NF 16019068 e B.O
                     70-31230 | NF 745638
@@ -246,6 +246,51 @@ export default function Informativo() {
                   importância de seguir os protocolos estabelecidos para
                   garantir a integridade dos processos e a qualidade das
                   operações.
+                </div>
+                ______________________________________________________________________________________________________________________________
+                <div style={{ position: "relative", zIndex: 0 }}>
+                  <img
+                    src="/assets/equipesenior/vix.jpeg"
+                    alt="Ícone"
+                    width="45"
+                    style={{ verticalAlign: "middle", marginRight: "8px" }}
+                  />
+                  Penalização Por Reversão Indevida{" "}
+                  <b>B.O 6-75878 | NF 100052</b>
+                  <br />
+                  Informamos que foi aplicada penalizações a <b>
+                    {" "}
+                    EQUIPE VIX
+                  </b>{" "}
+                  devido às ocorrências registradas no dia 16/10, referente à
+                  reversão indevidas de B.O, com a justificativa de abertura de
+                  de B.O fora do prazo. Como resultado, foi atribuída uma
+                  penalidade de <b>-3 pontos</b> no sistema de desempenho.
+                  Reforçamos a importância de seguir os protocolos estabelecidos
+                  para garantir a integridade dos processos e a qualidade das
+                  operações.
+                </div>
+                ______________________________________________________________________________________________________________________________
+                <div style={{ position: "relative", zIndex: 0 }}>
+                  <img
+                    src="/assets/equipesenior/sao.jpg"
+                    alt="Ícone"
+                    width="45"
+                    style={{ verticalAlign: "middle", marginRight: "8px" }}
+                  />
+                  Penalização Por Reversão Indevidas{" "}
+                  <b>B.O 86-27790 | NF 6543104</b>
+                  <br />
+                  Informamos que foi aplicada penalizações a <b>
+                    {" "}
+                    EQUIPE SAO
+                  </b>{" "}
+                  devido às ocorrências registradas no dia 13/10, referente à
+                  reversão indevida de B.O, sem justificativa. Como resultado,
+                  foi atribuída uma penalidade de <b>-3 pontos</b> no sistema de
+                  desempenho. Reforçamos a importância de seguir os protocolos
+                  estabelecidos para garantir a integridade dos processos e a
+                  qualidade das operações.
                 </div>
               </div>
             </p>
