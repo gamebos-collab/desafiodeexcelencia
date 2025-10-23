@@ -385,6 +385,47 @@ export default function Informativo() {
                   para garantir a integridade dos processos e a qualidade das
                   operações.
                 </div>
+                ______________________________________________________________________________________________________________________________
+                <div style={{ position: "relative", zIndex: 0 }}>
+                  <img
+                    src="/assets/equipesenior/sao.jpg"
+                    alt="Ícone"
+                    width="45"
+                    style={{ verticalAlign: "middle", marginRight: "8px" }}
+                  />
+                  Penalização Por Reversão Indevida <b>B.O 7-93759 | NF 1777</b>
+                  <br />
+                  Informamos que foi aplicada penalização a <b>
+                    {" "}
+                    EQUIPE SAO
+                  </b>{" "}
+                  devido às ocorrência registrada no dia 16/10, referente à
+                  reversão indevida de B.O, Reversão para outra unidade
+                  erroneamente sem analise correta do procedimento . Como
+                  resultado, foi atribuída uma penalidade de <b>-3 pontos</b> no
+                  sistema de desempenho. Reforçamos a importância de seguir os
+                  protocolos estabelecidos para garantir a integridade dos
+                  processos e a qualidade das operações.
+                </div>
+                ______________________________________________________________________________________________________________________________
+                <div>
+                  <img
+                    src="/assets/equipesenior/cwb.jpg" // troque pelo caminho da sua imagem
+                    alt="Ícone"
+                    width="50" // tamanho pequeno, ajuste conforme necessário
+                    style={{ verticalAlign: "middle", marginRight: "8px" }}
+                  />
+                  Penalização Por Reversão Indevida do{" "}
+                  <b>B.O 68-5420 | NF 163024</b>
+                  <br /> Informamos que foi aplicada uma penalização a{" "}
+                  <b> EQUIPE CWB</b> devido à ocorrência registrada no dia
+                  20/10, Reversão para outra unidade erroneamente sem analise
+                  correta do procedimento. Como resultado, foi atribuída uma
+                  penalidade de <b>-3 pontos</b> no sistema de desempenho.
+                  Reforçamos a importância de seguir os protocolos estabelecidos
+                  para garantir a integridade dos processos e a qualidade das
+                  operações.
+                </div>
               </div>
             </p>
             <br />
