@@ -95,32 +95,6 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-         
-              Consulte o INFORMATIVO para entender o motivo.
-              <button
-                style={{
-                  display: "block",
-                  margin: "18px auto 0 auto",
-                  background: "#fff",
-                  color: "#d32f2f",
-                  fontWeight: "bold",
-                  border: "none",
-                  borderRadius: "8px",
-                  fontSize: "1rem",
-                  padding: "9px 22px",
-                  cursor: "pointer",
-                  boxShadow: "0 1px 8px #0002",
-                  outline: "none",
-                  transition: "background 0.2s",
-                }}
-                onClick={() => setShowPopup(false)}
-              >
-                OK, entendi
-              </button>
-            </motion.div>
-          )}
-          {/* FIM POPUP */}
-
           <div className="tabela-overlay">
             {dadosTabela.length > 1 ? (
               <div
