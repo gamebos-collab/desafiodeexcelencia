@@ -426,6 +426,25 @@ export default function Informativo() {
                   para garantir a integridade dos processos e a qualidade das
                   operações.
                 </div>
+                ______________________________________________________________________________________________________________________________
+                <div>
+                  <img
+                    src="/assets/equipesenior/blu.jpg" // troque pelo caminho da sua imagem
+                    alt="Ícone"
+                    width="50" // tamanho pequeno, ajuste conforme necessário
+                    style={{ verticalAlign: "middle", marginRight: "8px" }}
+                  />
+                  Penalização Por Reversão Indevida do{" "}
+                  <b>B.O 2-119592 | NF 11737, 2-119591 | NF 598794</b>
+                  <br /> Informamos que foi aplicada uma penalização a{" "}
+                  <b> EQUIPE BLU</b> devido à ocorrência registrada no dia 23/10
+                  e 27/10, Reversão para outra unidade erroneamente sem analise
+                  da ocorrência e procedimento. Como resultado, foi atribuída
+                  uma penalidade de <b>-9 pontos</b> no sistema de desempenho.
+                  Reforçamos a importância de seguir os protocolos estabelecidos
+                  para garantir a integridade dos processos e a qualidade das
+                  operações.
+                </div>
               </div>
             </p>
             <br />
