@@ -13,7 +13,7 @@ export default function Homepage() {
   const winners = [
     {
       position: 1,
-      team: "EQUIPE SAO",
+      team: "EQUIPE SAOO",
       score: "835",
       img: "/assets/vencedores/sao.png",
       highlight: "EQUIPE SÊNIOR",
