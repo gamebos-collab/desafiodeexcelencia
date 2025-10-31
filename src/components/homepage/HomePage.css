@@ -1,451 +1,135 @@
 /* Homepage.css
-   Arquivo criado para resolver o erro de build: import "./Homepage.css"
-   Baseado no arquivo fornecido (Vencedores page), adaptado para uso no componente HomePage.
-   - Inclui tanto seletores com .homepage-* quanto os originais .vencedores-* para compatibilidade.
-   - Cole este arquivo em src/components/homepage/Homepage.css
+   Arquivo criado para resolver o erro: import "./Homepage.css" em HomePage.jsx
+   Cole exatamente neste caminho: src/components/homepage/Homepage.css
+   Ajuste cores/seletores conforme seu markup específico.
 */
 
-/* Tema / variáveis */
+/* Variáveis básicas */
 :root {
   --bg: #f4f4f6;
-  --bg-gradient: linear-gradient(
-      circle at 20% 10%,
-      rgba(111, 43, 216, 0.06) 0%,
-      transparent 20%
-    ),
-    linear-gradient(180deg, #f4f4f6 0%, #ececec 50%, #e1e1e1 100%);
   --panel: #ffffff;
-  --accent-purple: #6f2bd8;
-  --accent-orange: #ff5a00;
+  --accent: #6f2bd8;
   --muted: #6b7280;
-  --glass: rgba(255, 255, 255, 0.03);
   --text: #111827;
   --card-shadow: 0 10px 28px rgba(14, 14, 14, 0.08);
 }
 
-/* Root page (compatível com .vencedores-root e .homepage-root) */
-.vencedores-root,
+/* Container principal da Home (use a classe principal do seu componente) */
+.homepage,
 .homepage-root {
   min-height: 100vh;
-  background: var(--bg-gradient);
+  background: linear-gradient(180deg, #f4f4f6 0%, #ececec 50%, #e1e1e1 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 28px 18px;
   font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color: var(--text);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Confetti decorativo */
-.confetti-wrap {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 2;
-}
-.confetti {
-  position: absolute;
-  width: 10px;
-  height: 16px;
-  border-radius: 2px;
-  opacity: 0.95;
-  transform: rotate(10deg);
-  animation-name: fall;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-.confetti.c1 {
-  left: 6%;
-  top: -8%;
-  background: #ffd15a;
-  animation-duration: 2.6s;
-  animation-delay: 0s;
-}
-.confetti.c2 {
-  left: 22%;
-  top: -12%;
-  background: #ff7a7a;
-  animation-duration: 3.1s;
-  animation-delay: 0.2s;
-  height: 14px;
-}
-.confetti.c3 {
-  left: 34%;
-  top: -6%;
-  background: #8b5cf6;
-  animation-duration: 2.9s;
-  animation-delay: 0.45s;
-  transform: rotate(-8deg);
-}
-.confetti.c4 {
-  left: 48%;
-  top: -10%;
-  background: #34d399;
-  animation-duration: 3.4s;
-  animation-delay: 0.1s;
-}
-.confetti.c5 {
-  left: 64%;
-  top: -14%;
-  background: #60a5fa;
-  animation-duration: 2.7s;
-  animation-delay: 0.6s;
-}
-.confetti.c6 {
-  left: 78%;
-  top: -8%;
-  background: #f472b6;
-  animation-duration: 3.2s;
-  animation-delay: 0.85s;
-}
-.confetti.c7 {
-  left: 86%;
-  top: -6%;
-  background: #fb923c;
-  animation-duration: 2.8s;
-  animation-delay: 1.1s;
-}
-.confetti.c8 {
-  left: 92%;
-  top: -10%;
-  background: #fbbf24;
-  animation-duration: 3.6s;
-  animation-delay: 1.6s;
-}
-
-@keyframes fall {
-  0% {
-    transform: translateY(-10vh) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(110vh) rotate(360deg);
-    opacity: 0.6;
-  }
-}
-
-/* Container geral (compatível com .vencedores-container e .homepage-container) */
-.vencedores-container,
-.homepage-container {
-  width: 100%;
-  max-width: 1200px;
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  align-items: center;
   box-sizing: border-box;
 }
 
-/* Header / hero (compatível com .vencedores-hero e .homepage-hero) */
-.vencedores-hero,
-.homepage-hero {
+/* Hero / topo */
+.homepage-hero,
+.hero {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 12px;
+  max-width: 1200px;
   padding: 18px;
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.9),
     rgba(255, 255, 255, 0.75)
   );
-  border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(10, 10, 10, 0.06);
-  position: relative;
-}
-
-/* Badges */
-.badge-left,
-.badge-right {
-  font-size: 14px;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.02));
-  padding: 10px 14px;
   border-radius: 12px;
-  color: var(--text);
-  font-weight: 700;
-  align-self: center;
-  white-space: nowrap;
-}
-
-/* Hero central */
-.hero-center {
-  flex: 1;
+  box-shadow: 0 8px 30px rgba(10, 10, 10, 0.06);
   display: flex;
-  flex-direction: column;
+  gap: 12px;
   align-items: center;
-  gap: 10px;
-  text-align: center;
 }
 
-.label-month {
-  font-size: 18px;
+/* Títulos */
+.homepage-title,
+.hero-main {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--accent);
+  margin: 0;
+}
+
+.homepage-subtitle,
+.hero-sub {
+  font-size: 14px;
   color: var(--muted);
   margin: 0;
-  font-weight: 700;
-  letter-spacing: 1px;
 }
 
-.hero-title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-}
-
-/* Texto grande com efeito degradê */
-.hero-main {
-  background: linear-gradient(90deg, #5a20d6, #a04cf6);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-size: 46px;
-  font-weight: 900;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-shadow: 0 6px 20px rgba(144, 63, 239, 0.08);
-  line-height: 1;
-}
-
-.hero-sub {
-  background: linear-gradient(
-    90deg,
-    var(--accent-orange),
-    rgba(255, 138, 0, 0.85)
-  );
-  color: #fff;
-  padding: 6px 18px;
-  border-radius: 20px;
-  font-weight: 800;
-  margin-top: -6px;
-  transform: translateY(-6px);
-  box-shadow: 0 6px 16px rgba(255, 90, 0, 0.08);
-}
-
-/* Imagem/banner do hero */
-.hero-image {
-  margin-top: 6px;
-  width: min(880px, 92%);
-  max-height: 420px;
-  object-fit: cover;
-  border-radius: 14px;
-  border: 6px solid rgba(255, 255, 255, 0.9);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
-}
-
-/* Área de resultados */
-.results-section {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
-  padding: 6px 8px 24px 8px;
-  box-sizing: border-box;
-}
-
-/* Linha de cards */
+/* Cards / conteúdo */
+.homepage-content,
+.vencedores-container,
 .cards-row {
   width: 100%;
+  max-width: 1200px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
-  align-items: start;
-  z-index: 4;
+  margin-top: 18px;
+  box-sizing: border-box;
 }
 
-/* Card individual */
-.winner-card {
+.winner-card,
+.home-card {
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.92),
     rgba(255, 255, 255, 0.88)
   );
-  border-radius: 14px;
+  border-radius: 12px;
   padding: 12px;
+  box-shadow: var(--card-shadow);
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: var(--card-shadow);
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  min-height: 320px;
-  position: relative;
-  overflow: hidden;
-  transition: transform 280ms cubic-bezier(0.2, 0.9, 0.2, 1), box-shadow 200ms;
+  min-height: 220px;
+  transition: transform 220ms ease, box-shadow 200ms ease;
 }
 
-/* Destaque do 1º colocado */
-.pos-1 {
-  transform: translateY(-10px);
-  box-shadow: 0 18px 40px rgba(111, 43, 216, 0.12);
+.winner-card:hover,
+.home-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.12);
 }
 
-/* Topo do card */
-.card-top {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+/* Imagem do cartão */
+.card-media img,
+.home-card img {
   width: 100%;
-  justify-content: center;
-}
-
-.medal {
-  font-size: 34px;
-  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.12));
-}
-.team-name {
-  font-weight: 800;
-  text-transform: uppercase;
-  font-size: 14px;
-  letter-spacing: 0.6px;
-  color: var(--text);
-}
-
-/* Área de mídia (imagem do time/avatar) */
-.card-media {
-  width: 88%;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.03));
-  margin: 12px 0;
-  border-radius: 10px;
-  padding: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 170px;
-  box-shadow: inset 0 -20px 40px rgba(0, 0, 0, 0.03);
-}
-
-.card-media img {
-  max-width: 100%;
-  max-height: 100%;
+  height: auto;
+  max-height: 160px;
   object-fit: cover;
   border-radius: 8px;
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
 }
 
-/* Rodapé do cartão */
-.card-footer {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  margin-top: auto;
-}
-
-.score {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  text-align: center;
-}
-
-.score-value {
-  font-size: 34px;
-  font-weight: 900;
-  color: var(--accent-purple);
-}
-
-.score-label {
-  font-size: 12px;
-  color: var(--muted);
-  font-weight: 700;
-}
-
-.highlight {
-  font-size: 13px;
-  color: #374151;
-  font-weight: 700;
-  margin-top: 6px;
-}
-
-/* Texto de parabéns */
-.congrats {
-  margin-top: 14px;
-  text-align: center;
-}
-
-.congrats h3 {
-  margin: 0;
-  font-size: 20px;
-  color: var(--text);
-  font-weight: 800;
-  letter-spacing: 0.6px;
-}
-
-.congrats-strong {
-  margin: 0;
-  font-size: 26px;
-  color: var(--accent-purple);
-  font-weight: 900;
-  letter-spacing: 1px;
-}
-
-/* Nota final (compatível com .vencedores-footer e .homepage-footer) */
-.vencedores-footer,
-.homepage-footer {
-  margin-top: 10px;
+/* Rodapé */
+.homepage-footer,
+.vencedores-footer {
+  margin-top: 18px;
   color: #4b5563;
-  font-size: 12px;
-  opacity: 0.95;
-}
-
-/* Hover / micro-interações */
-.winner-card:hover {
-  transform: translateY(-6px) scale(1.01);
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.12);
+  font-size: 13px;
 }
 
 /* Responsividade */
 @media (max-width: 980px) {
-  .cards-row {
+  .cards-row,
+  .homepage-content {
     grid-template-columns: repeat(2, 1fr);
-  }
-  .hero-image {
-    max-height: 360px;
   }
 }
 
 @media (max-width: 720px) {
-  .vencedores-hero,
-  .homepage-hero {
-    flex-direction: column;
-    align-items: center;
-    padding: 12px;
-  }
-  .cards-row {
+  .cards-row,
+  .homepage-content {
     grid-template-columns: 1fr;
-    gap: 14px;
-  }
-  .pos-1 {
-    transform: translateY(0);
   }
   .hero-main {
-    font-size: 34px;
-  }
-  .hero-sub {
-    font-size: 12px;
-    padding: 6px 12px;
-  }
-  .hero-image {
-    max-height: 280px;
-    width: 100%;
-    border-width: 4px;
-  }
-  .winner-card {
-    min-height: 300px;
+    font-size: 28px;
   }
 }
-
-/* Pequena proteção para pseudo elementos */
-.hero-image::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 0;
-}
-
-/* fim do arquivo */
