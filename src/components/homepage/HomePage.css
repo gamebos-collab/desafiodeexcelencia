@@ -1,15 +1,13 @@
-/* VencedoresPage.css
-   Versão ajustada pronta para colar.
-   - Uso consistente de variáveis (--bg, --panel, --accent-*, --muted)
-   - Background centralizado em variáveis para facilitar customização
-   - Animações de confete com durações variadas
-   - Correções responsivas e remoção de regras redundantes
-   - Comentários mínimos para facilitar leitura
+/* Homepage.css
+   Arquivo criado para resolver o erro de build: import "./Homepage.css"
+   Baseado no arquivo fornecido (Vencedores page), adaptado para uso no componente HomePage.
+   - Inclui tanto seletores com .homepage-* quanto os originais .vencedores-* para compatibilidade.
+   - Cole este arquivo em src/components/homepage/Homepage.css
 */
 
 /* Tema / variáveis */
 :root {
-  --bg: #f4f4f6; /* cor de fundo clara padrão (mude para #0f0f12 se quiser escuro) */
+  --bg: #f4f4f6;
   --bg-gradient: linear-gradient(
       circle at 20% 10%,
       rgba(111, 43, 216, 0.06) 0%,
@@ -25,8 +23,9 @@
   --card-shadow: 0 10px 28px rgba(14, 14, 14, 0.08);
 }
 
-/* Root page */
-.vencedores-root {
+/* Root page (compatível com .vencedores-root e .homepage-root) */
+.vencedores-root,
+.homepage-root {
   min-height: 100vh;
   background: var(--bg-gradient);
   display: flex;
@@ -127,8 +126,9 @@
   }
 }
 
-/* Container geral */
-.vencedores-container {
+/* Container geral (compatível com .vencedores-container e .homepage-container) */
+.vencedores-container,
+.homepage-container {
   width: 100%;
   max-width: 1200px;
   z-index: 3;
@@ -139,8 +139,9 @@
   box-sizing: border-box;
 }
 
-/* Header / hero */
-.vencedores-hero {
+/* Header / hero (compatível com .vencedores-hero e .homepage-hero) */
+.vencedores-hero,
+.homepage-hero {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -383,8 +384,9 @@
   letter-spacing: 1px;
 }
 
-/* Nota final */
-.vencedores-footer {
+/* Nota final (compatível com .vencedores-footer e .homepage-footer) */
+.vencedores-footer,
+.homepage-footer {
   margin-top: 10px;
   color: #4b5563;
   font-size: 12px;
@@ -408,7 +410,8 @@
 }
 
 @media (max-width: 720px) {
-  .vencedores-hero {
+  .vencedores-hero,
+  .homepage-hero {
     flex-direction: column;
     align-items: center;
     padding: 12px;
@@ -437,7 +440,7 @@
   }
 }
 
-/* Pequena proteção para elementos pseudo (evita efeitos inesperados) */
+/* Pequena proteção para pseudo elementos */
 .hero-image::after {
   content: "";
   display: block;
