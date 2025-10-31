@@ -3,42 +3,39 @@ import { motion } from "framer-motion";
 import "./Homepage.css";
 
 /**
- * Página temporária de vencedores.
- * - A imagem principal deve estar em: public/assets/vencedores/banner.jpg
- * - Logos/miniaturas das equipes devem ficar em: public/assets/vencedores/<nome>.jpg (ex: bhz.jpg, sao.jpg, cas.jpg)
- *
- * Para usar: importe e coloque <VencedoresPage /> em alguma rota temporária ou no App.
+ * Página temporária de vencedores (Homepage).
+ * - Imagens devem estar em: public/assets/vencedores/ ou public/assets/
+ * - Para usar: importe e coloque <Homepage /> em alguma rota ou no App.
  */
 
 export default function Homepage() {
-  // Dados de exemplo — ajuste conforme necessário (pode vir de API ou XLSX)
+  // Dados de exemplo — ajuste conforme necessário (pode vir de API)
   const winners = [
     {
       position: 1,
       team: "EQUIPE SAO",
       score: "835",
-      img: "/assets/sao.png", // coloque a imagem correspondente em public/assets/vencedores/
+      img: "/assets/vencedores/sao.png",
       highlight: "EQUIPE SÊNIOR",
     },
     {
-      position: 1,
+      position: 2,
       team: "EQUIPE BHZ",
       score: "354",
-      img: "/assets/bhz.png",
+      img: "/assets/vencedores/bhz.png",
       highlight: "EQUIPE PLENO",
     },
     {
-      position: 1,
+      position: 3,
       team: "EQUIPE CAS",
       score: "991",
-      img: "/assets/cas.png",
+      img: "/assets/vencedores/cas.png",
       highlight: "EQUIPE SOFT",
     },
   ];
 
   useEffect(() => {
-    // Apenas para demo: pequena chamada para animação/side-effects futuros
-    // Poderia disparar um evento de analytics ou fetch de dados reais.
+    // Demo: side-effects futuros (analytics, fetch, etc.)
   }, []);
 
   const container = {
@@ -61,8 +58,7 @@ export default function Homepage() {
   };
 
   return (
-    <div className="vencedores-root">
-      {/* Confetes (simples, pure-css) */}
+    <div className="vencedores-root homepage-root">
       <div className="confetti-wrap" aria-hidden="true">
         <span className="confetti c1" />
         <span className="confetti c2" />
@@ -72,15 +68,11 @@ export default function Homepage() {
         <span className="confetti c6" />
         <span className="confetti c7" />
         <span className="confetti c8" />
-        <span className="confetti c9" />
-        <span className="confetti c10" />
-        <span className="confetti c11" />
-        <span className="confetti c12" />
       </div>
 
-      <main className="vencedores-container">
+      <main className="vencedores-container homepage-container">
         <motion.header
-          className="vencedores-hero"
+          className="vencedores-hero homepage-hero"
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
@@ -107,7 +99,7 @@ export default function Homepage() {
           >
             {winners.map((w) => (
               <motion.article
-                key={w.position}
+                key={w.team}
                 className={`winner-card pos-${w.position}`}
                 variants={cardVariant}
               >
@@ -152,7 +144,7 @@ export default function Homepage() {
         </section>
       </main>
 
-      <footer className="vencedores-footer">
+      <footer className="vencedores-footer homepage-footer">
         <small></small>
       </footer>
     </div>
