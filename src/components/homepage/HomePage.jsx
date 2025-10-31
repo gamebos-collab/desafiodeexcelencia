@@ -10,7 +10,7 @@ import "./Homepage.css";
  * Para usar: importe e coloque <VencedoresPage /> em alguma rota temporária ou no App.
  */
 
-export default function VencedoresPage() {
+export default function Homepage() {
   // Dados de exemplo — ajuste conforme necessário (pode vir de API ou XLSX)
   const winners = [
     {
