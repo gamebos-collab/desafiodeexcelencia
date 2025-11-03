@@ -56,6 +56,85 @@ export default function HomePage() {
             </p>
           </motion.div>
 
+          {/* POPUP centralizado e reduzido horizontalmente */}
+          {showPopup && (
+            <motion.div
+              initial={{ scale: 0.7, opacity: 0, y: -60 }}
+              animate={{ scale: 1.05, opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, type: "spring" }}
+              style={{
+                position: "fixed",
+                top: "15%", // Centraliza verticalmente
+                left: "30%", // Centraliza horizontalmente
+                transform: "translate(-50%, -50%)", // Centralização absoluta
+                zIndex: 999999, // Garante que está na frente de tudo
+                background: "linear-gradient(90deg, #ff3d00 0%, #ffc400 100%)",
+                color: "#1a1a1a",
+                fontWeight: "bold",
+                fontSize: "1.3rem", // Ajuste o tamanho do texto do popup aqui
+                padding: "60px 100px", // Ajuste o padding para aumentar/diminuir o popup
+                borderRadius: "16px",
+                boxShadow: "0 0 32px 8px #ff3d0055, 0 2px 6px #ffc40077",
+                border: "3px solid #fff",
+                textAlign: "center",
+                maxWidth: "600px", // Reduzido horizontalmente, ajuste conforme quiser
+                width: "90vw", // Responsivo, mas limitado pelo maxWidth
+                letterSpacing: "1px",
+                animation: "shake 1.2s infinite",
+              }}
+            >
+              {/* ATENÇÃO! Título destacado */}⚠{" "}
+              <span style={{ color: "#fff", textShadow: "0 0 8px #ff3d00" }}>
+                Atenção!
+                <br />
+                PENALIZAÇÃO APLICADA !
+              </span>
+              <br />
+              <br />
+              Equipes Penalizadas
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  gap: "16px",
+                  flexWrap: "wrap",
+                }}
+              >
+                <img
+                  src="/assets/vencedores.png"
+                  alt="Próxima imagem"
+                  width="45"
+                  style={{
+                    objectFit: "cover",
+                  }}
+                />
+              </div>
+              Consulte o INFORMATIVO para entender o motivo.
+              <button
+                style={{
+                  display: "block",
+                  margin: "18px auto 0 auto",
+                  background: "#fff",
+                  color: "#d32f2f",
+                  fontWeight: "bold",
+                  border: "none",
+                  borderRadius: "8px",
+                  fontSize: "1rem",
+                  padding: "9px 22px",
+                  cursor: "pointer",
+                  boxShadow: "0 1px 8px #0002",
+                  outline: "none",
+                  transition: "background 0.2s",
+                }}
+                onClick={() => setShowPopup(false)}
+              >
+                OK, entendi
+              </button>
+            </motion.div>
+          )}
+          {/* FIM POPUP */}
+
           <motion.div
             className="buttons"
             initial={{ opacity: 0 }}
