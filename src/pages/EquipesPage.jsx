@@ -170,11 +170,10 @@ export default function EquipesPage() {
       membrosLinha1: [
         { nome: "CPN", avatar: "/assets/equipesenior/cpn.png" },
         { nome: "POA", avatar: "/assets/equipesenior/poa.jpg" },
-        { nome: "SAO", avatar: "/assets/equipesenior/sao.jpg" },
       ],
       membrosLinha2: [
         { nome: "CWB", avatar: "/assets/equipesenior/cwb.jpg" },
-        { nome: "VIX", avatar: "/assets/equipesenior/vix.jpeg" },
+        { nome: "SAO", avatar: "/assets/equipesenior/sao.jpg" },
       ],
     },
     {
@@ -185,10 +184,13 @@ export default function EquipesPage() {
       membrosLinha1: [
         { nome: "GRU", avatar: "/assets/equipepleno/gru.png" },
         { nome: "CXS", avatar: "/assets/equipepleno/cxs.jpg" },
+        { nome: "BAU", avatar: "/assets/equipesoft/bau.png" },
       ],
       membrosLinha2: [
         { nome: "BHZ", avatar: "/assets/equipepleno/bhz.png" },
         { nome: "PPY", avatar: "/assets/equipepleno/ppy.png" },
+        { nome: "BLU", avatar: "/assets/equipesenior/blu.jpg" },
+        { nome: "VIX", avatar: "/assets/equipesenior/vix.jpeg" },
       ],
     },
     {
@@ -198,13 +200,11 @@ export default function EquipesPage() {
 
       membrosLinha1: [
         { nome: "FLN", avatar: "/assets/equipesoft/fln.jpg" },
-        { nome: "BAU", avatar: "/assets/equipesoft/bau.png" },
-        { nome: "BLU", avatar: "/assets/equipesenior/blu.jpg" },
+        { nome: "SMA", avatar: "/assets/equipesoft/sma.png" },
         { nome: "SOR", avatar: "/assets/equipesoft/sor.png" },
       ],
       membrosLinha2: [
         { nome: "JVL", avatar: "/assets/equipesoft/jvl.jpg" },
-        { nome: "SMA", avatar: "/assets/equipesoft/sma.png" },
         { nome: "LDA", avatar: "/assets/equipepleno/lda.jpg" },
         { nome: "CAS", avatar: "/assets/equipepleno/cas.png" },
         { nome: "RIP", avatar: "/assets/equipesoft/rip.jpg" },

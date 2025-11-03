@@ -91,69 +91,9 @@ export default function HomePage() {
             }}
           >
             <p style={{ color: "#ffc400ff" }}>
-              🕒 Última atualização do sistema: 30/10/2025 09:38h
+              🕒 Última atualização do sistema: 03/11/2025 18:13h
             </p>
           </motion.div>
-
-          {/* POPUP centralizado e reduzido horizontalmente */}
-          {showPopup && (
-            <motion.div
-              initial={{ scale: 0.7, opacity: 0, y: -60 }}
-              animate={{ scale: 1.05, opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, type: "spring" }}
-              style={{
-                position: "fixed",
-                top: "5%", // Centraliza verticalmente
-                left: "30%", // Centraliza horizontalmente
-                transform: "translate(-50%, -50%)", // Centralização absoluta
-                zIndex: 999999, // Garante que está na frente de tudo
-                background: "linear-gradient(90deg, #ff3d00 0%, #ffc400 100%)",
-                color: "#1a1a1a",
-                fontWeight: "bold",
-                fontSize: "1.3rem", // Ajuste o tamanho do texto do popup aqui
-                padding: "10px 100px", // Ajuste o padding para aumentar/diminuir o popup
-                borderRadius: "16px",
-                boxShadow: "0 0 32px 8px #ff3d0055, 0 2px 6px #ffc40077",
-                border: "3px solid #fff",
-                textAlign: "center",
-                maxWidth: "700px", // Reduzido horizontalmente, ajuste conforme quiser
-                width: "90vw", // Responsivo, mas limitado pelo maxWidth
-                letterSpacing: "1px",
-                animation: "shake 1.2s infinite",
-              }}
-            >
-              <img
-                src="/assets/vencedores.png"
-                alt="Próxima imagem"
-                width="450"
-              />
-              {/* ATENÇÃO! Título destacado */}{" "}
-              <span style={{ color: "#fff", textShadow: "0 0 8px #ff3d00" }}>
-                <br />
-              </span>
-              <button
-                style={{
-                  display: "block",
-                  margin: "18px auto 0 auto",
-                  background: "#fff",
-                  color: "#d32f2f",
-                  fontWeight: "bold",
-                  border: "none",
-                  borderRadius: "8px",
-                  fontSize: "1rem",
-                  padding: "9px 22px",
-                  cursor: "pointer",
-                  boxShadow: "0 1px 8px #0002",
-                  outline: "none",
-                  transition: "background 0.2s",
-                }}
-                onClick={() => setShowPopup(false)}
-              >
-                OK, entendi
-              </button>
-            </motion.div>
-          )}
-          {/* FIM POPUP */}
 
           <div className="tabela-overlay">
             {dadosTabela.length > 1 ? (
