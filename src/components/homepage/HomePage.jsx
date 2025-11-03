@@ -1,152 +1,348 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import "./Homepage.css";
+import * as XLSX from "xlsx";
+import "./HomePage.css";
 
-/**
- * Página temporária de vencedores (Homepage).
- * - Imagens devem estar em: public/assets/vencedores/ ou public/assets/
- * - Para usar: importe e coloque <Homepage /> em alguma rota ou no App.
- */
-
-export default function Homepage() {
-  // Dados de exemplo — ajuste conforme necessário (pode vir de API)
-  const winners = [
-    {
-      position: 1,
-      team: "EQUIPE SAOO",
-      score: "835",
-      img: "/assets/vencedores/sao.png",
-      highlight: "EQUIPE SÊNIOR",
-    },
-    {
-      position: 2,
-      team: "EQUIPE BHZ",
-      score: "354",
-      img: "/assets/vencedores/bhz.png",
-      highlight: "EQUIPE PLENO",
-    },
-    {
-      position: 3,
-      team: "EQUIPE CAS",
-      score: "991",
-      img: "/assets/vencedores/cas.png",
-      highlight: "EQUIPE SOFT",
-    },
-  ];
+export default function HomePage() {
+  const navigate = useNavigate();
+  const [dadosTabela, setDadosTabela] = useState([]);
+  const [showPopup, setShowPopup] = useState(true);
 
   useEffect(() => {
-    // Demo: side-effects futuros (analytics, fetch, etc.)
+    const carregarDados = async () => {
+      try {
+        const res = await fetch(`/gamekpi.xlsx?v=${Date.now()}`);
+        const buffer = await res.arrayBuffer();
+        const workbook = XLSX.read(buffer, { type: "array" });
+        const sheet = workbook.Sheets["Planilha2"];
+        const json = XLSX.utils.sheet_to_json(sheet, {
+          range: "F20:K38",
+          header: 1,
+          blankrows: false,
+          defval: 0,
+        });
+
+        setDadosTabela(json);
+      } catch (err) {
+        console.error("Erro ao carregar planilha:", err);
+      }
+    };
+
+    carregarDados();
   }, []);
 
-  const container = {
-    hidden: {},
-    show: {
-      transition: {
-        staggerChildren: 0.12,
-      },
-    },
-  };
-
-  const cardVariant = {
-    hidden: { opacity: 0, y: 18, scale: 0.98 },
-    show: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: { type: "spring", stiffness: 120, damping: 14 },
-    },
-  };
-
   return (
-    <div className="vencedores-root homepage-root">
-      <div className="confetti-wrap" aria-hidden="true">
-        <span className="confetti c1" />
-        <span className="confetti c2" />
-        <span className="confetti c3" />
-        <span className="confetti c4" />
-        <span className="confetti c5" />
-        <span className="confetti c6" />
-        <span className="confetti c7" />
-        <span className="confetti c8" />
-      </div>
-
-      <main className="vencedores-container homepage-container">
-        <motion.header
-          className="vencedores-hero homepage-hero"
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-        >
-          <div className="badge-left">Desafio de Excelência</div>
-
-          <div className="hero-center">
-            <h2 className="label-month">Vencedores</h2>
-            <div className="hero-title">
-              <span className="hero-main">OUTUBRO</span>
-              <span className="hero-sub">DESAFIO DE EXCELÊNCIA</span>
-            </div>
-          </div>
-
-          <div className="badge-right">Parabéns!</div>
-        </motion.header>
-
-        <section className="results-section">
+    <>
+      <div
+        className="homepage-container"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          minHeight: "100vh",
+        }}
+      >
+        {/* Conteúdo da página */}
+        <div style={{ flexGrow: 1 }}>
           <motion.div
-            className="cards-row"
-            variants={container}
-            initial="hidden"
-            animate="show"
+            className="banner"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
           >
-            {winners.map((w) => (
-              <motion.article
-                key={w.team}
-                className={`winner-card pos-${w.position}`}
-                variants={cardVariant}
-              >
-                <div className="card-top">
-                  <div className="medal">
-                    {w.position === 1 ? "🥇" : w.position === 2 ? "🥈" : "🥉"}
-                  </div>
-                  <div className="team-name">{w.team}</div>
-                </div>
+            <h1 className="game-title">🎮 Desafio de Excelência</h1>
+            <p className="subtitle">
+              Competição entre equipes rumo à excelência!
+            </p>
+          </motion.div>
 
-                <div className="card-media">
+          <motion.div
+            className="buttons"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1 }}
+          >
+            <button className="btn" onClick={() => navigate("/")}>
+              Home
+            </button>
+            <button className="btn" onClick={() => navigate("/equipes")}>
+              Ver Equipes
+            </button>
+            <button className="btn" onClick={() => navigate("/ranking")}>
+              Ranking
+            </button>
+            <button className="btn" onClick={() => navigate("/conquistas")}>
+              Conquistas
+            </button>
+            <button className="btn" onClick={() => navigate("/regras")}>
+              Regras
+            </button>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2 }}
+            style={{
+              textAlign: "center",
+              marginTop: "10px",
+              color: "#ccc",
+              fontSize: "12px",
+            }}
+          >
+            <p style={{ color: "#ffc400ff" }}>
+              🕒 Última atualização do sistema: 30/10/2025 09:38h
+            </p>
+          </motion.div>
+
+          {/* POPUP centralizado e reduzido horizontalmente */}
+          {showPopup && (
+            <motion.div
+              initial={{ scale: 0.7, opacity: 0, y: -60 }}
+              animate={{ scale: 1.05, opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, type: "spring" }}
+              style={{
+                position: "fixed",
+                top: "15%", // Centraliza verticalmente
+                left: "30%", // Centraliza horizontalmente
+                transform: "translate(-50%, -50%)", // Centralização absoluta
+                zIndex: 999999, // Garante que está na frente de tudo
+                background: "linear-gradient(90deg, #ff3d00 0%, #ffc400 100%)",
+                color: "#1a1a1a",
+                fontWeight: "bold",
+                fontSize: "1.3rem", // Ajuste o tamanho do texto do popup aqui
+                padding: "60px 100px", // Ajuste o padding para aumentar/diminuir o popup
+                borderRadius: "16px",
+                boxShadow: "0 0 32px 8px #ff3d0055, 0 2px 6px #ffc40077",
+                border: "3px solid #fff",
+                textAlign: "center",
+                maxWidth: "600px", // Reduzido horizontalmente, ajuste conforme quiser
+                width: "90vw", // Responsivo, mas limitado pelo maxWidth
+                letterSpacing: "1px",
+                animation: "shake 1.2s infinite",
+              }}
+            >
+              {/* ATENÇÃO! Título destacado */}⚠{" "}
+              <span style={{ color: "#fff", textShadow: "0 0 8px #ff3d00" }}>
+                Atenção!
+                <br />
+                PENALIZAÇÃO APLICADA !
+              </span>
+              <br />
+              <br />
+              Equipes Penalizadas
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  gap: "16px",
+                  flexWrap: "wrap",
+                }}
+              >
+                <img
+                  src="/assets/equipesenior/cwb.jpg"
+                  alt="Ícone"
+                  width="50"
+                  style={{
+                    objectFit: "cover",
+                  }}
+                />
+
+                <img
+                  src="/assets/equipesoft/fln.jpg"
+                  alt="Ícone"
+                  width="45"
+                  style={{
+                    objectFit: "cover",
+                  }}
+                />
+
+                <img
+                  src="/assets/equipesenior/blu.jpg"
+                  className="blinking-image"
+                  alt="Próxima imagem"
+                  width="45"
+                  style={{
+                    objectFit: "cover",
+                  }}
+                />
+                <img
+                  src="/assets/equipesenior/cpn.png"
+                  alt="Próxima imagem"
+                  width="50"
+                  style={{
+                    objectFit: "cover",
+                  }}
+                />
+                <img
+                  src="/assets/equipesenior/vix.jpeg"
+                  alt="Próxima imagem"
+                  width="50"
+                  style={{
+                    objectFit: "cover",
+                  }}
+                />
+                <img
+                  src="/assets/equipesenior/sao.jpg"
+                  alt="Próxima imagem"
+                  width="50"
+                  style={{
+                    objectFit: "cover",
+                  }}
+                />
+                <img
+                  src="/assets/equipepleno/ppy.png"
+                  alt="Próxima imagem"
+                  width="50"
+                  style={{
+                    objectFit: "cover",
+                  }}
+                />
+                <img
+                  src="/assets/equipesenior/poa.jpg"
+                  alt="Próxima imagem"
+                  width="55"
+                  style={{
+                    objectFit: "cover",
+                  }}
+                />
+                <img
+                  src="/assets/equipesoft/bau.png"
+                  alt="Próxima imagem"
+                  width="45"
+                  style={{
+                    objectFit: "cover",
+                  }}
+                />
+              </div>
+              Consulte o INFORMATIVO para entender o motivo.
+              <button
+                style={{
+                  display: "block",
+                  margin: "18px auto 0 auto",
+                  background: "#fff",
+                  color: "#d32f2f",
+                  fontWeight: "bold",
+                  border: "none",
+                  borderRadius: "8px",
+                  fontSize: "1rem",
+                  padding: "9px 22px",
+                  cursor: "pointer",
+                  boxShadow: "0 1px 8px #0002",
+                  outline: "none",
+                  transition: "background 0.2s",
+                }}
+                onClick={() => setShowPopup(false)}
+              >
+                OK, entendi
+              </button>
+            </motion.div>
+          )}
+          {/* FIM POPUP */}
+
+          <div className="tabela-overlay">
+            {dadosTabela.length > 1 ? (
+              <div
+                style={{
+                  margin: "40px auto",
+                  padding: "20px",
+                  width: "80%",
+                  maxWidth: "1200px",
+                  maxHeight: "120vh",
+                }}
+              >
+                <table
+                  style={{
+                    borderCollapse: "collapse",
+                    backgroundColor: "rgba(0, 0, 0, 0.89)",
+                    color: "#fff",
+                    width: "100%",
+                    fontSize: "12px",
+                    borderRadius: "8px",
+                  }}
+                >
+                  <thead>
+                    <tr>
+                      {Array.isArray(dadosTabela[0]) &&
+                        dadosTabela[0].map((header, index) => (
+                          <th
+                            key={index}
+                            style={{
+                              padding: "12px",
+                              borderBottom: "2px solid #f9a826",
+                              fontWeight: "bold",
+                              textAlign: "center",
+                              backgroundColor: "rgba(0, 0, 0, 0.89)",
+                            }}
+                          >
+                            {header}
+                          </th>
+                        ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {dadosTabela.slice(1).map((row, rowIndex) => {
+                      const corDeFundo =
+                        rowIndex % 2 === 0 ? "#1a1a1ac2" : "#69696938";
+
+                      return (
+                        <tr
+                          key={rowIndex}
+                          className="table-row-hover"
+                          style={{ backgroundColor: corDeFundo }}
+                        >
+                          {row.map((cell, cellIndex) => (
+                            <td
+                              key={cellIndex}
+                              style={{
+                                padding: "8.5px",
+                                borderBottom: "1px solid #707070ff",
+                                textAlign: "center",
+                              }}
+                            >
+                              {cell !== undefined && cell !== null ? cell : 0}
+                            </td>
+                          ))}
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+
+                {/* ✅ Imagem abaixo da tabela */}
+                <div style={{ marginTop: "10px", textAlign: "center" }}>
                   <img
-                    src={w.img}
-                    alt={`${w.team} foto`}
-                    onError={(e) => {
-                      e.currentTarget.src =
-                        "/assets/vencedores/placeholder.png";
+                    src="/assets/bbmlogistica.png"
+                    alt="Banner de atualização"
+                    style={{
+                      maxWidth: "47%",
+                      height: "auto",
+                      borderRadius: "12px",
+                      boxShadow: "0 4px 12px rgba(0,0,0,0.4)",
                     }}
                   />
                 </div>
+              </div>
+            ) : (
+              <p style={{ color: "#fff", marginTop: "40px" }}>
+                Carregando dados da planilha...
+              </p>
+            )}
+          </div>
 
-                <div className="card-footer">
-                  <div className="score">
-                    <span className="score-value">{w.score}</span>
-                    <span className="score-label">Pontos</span>
-                  </div>
-                  <div className="highlight">{w.highlight}</div>
-                </div>
-              </motion.article>
-            ))}
-          </motion.div>
-
-          <motion.div
-            className="congrats"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-          >
-            <h3>PARABÉNS A TODOS</h3>
-            <p className="congrats-strong">VENCEDORES</p>
-          </motion.div>
-        </section>
-      </main>
-
-      <footer className="vencedores-footer homepage-footer">
-        <small></small>
-      </footer>
-    </div>
+          <div className="animated-background" />
+        </div>
+        <br />
+      </div>
+      {/* DICA: Para animação shake no popup, adicione no seu CSS: */}
+      {/* 
+      @keyframes shake {
+        0%, 100% { transform: translate(-50%, -50%) }
+        10%, 30%, 50%, 70%, 90% { transform: translate(-50%, -54%) }
+        20%, 40%, 60%, 80% { transform: translate(-50%, -46%);}
+      }
+      */}
+    </>
   );
 }
