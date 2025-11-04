@@ -34,60 +34,68 @@ export default function EquipesPage() {
           POA: sheet["H2"]?.v !== undefined ? sheet["H2"].v : 0,
           SAO: sheet["H3"]?.v !== undefined ? sheet["H3"].v : 0,
           CWB: sheet["H5"]?.v !== undefined ? sheet["H5"].v : 0,
-          BLU: sheet["P9"]?.v !== undefined ? sheet["P9"].v : 0,
-          VIX: sheet["H6"]?.v !== undefined ? sheet["H6"].v : 0,
+          BLU: sheet["L8"]?.v !== undefined ? sheet["L8"].v : 0,
+          VIX: sheet["L6"]?.v !== undefined ? sheet["L6"].v : 0,
           GRU: sheet["L5"]?.v !== undefined ? sheet["L5"].v : 0,
           CXS: sheet["L3"]?.v !== undefined ? sheet["L3"].v : 0,
           BHZ: sheet["L2"]?.v !== undefined ? sheet["L2"].v : 0,
           PPY: sheet["L4"]?.v !== undefined ? sheet["L4"].v : 0,
           LDA: sheet["P7"]?.v !== undefined ? sheet["P7"].v : 0,
-          CAS: sheet["P3"]?.v !== undefined ? sheet["P3"].v : 0,
-          FLN: sheet["P5"]?.v !== undefined ? sheet["P5"].v : 0,
-          BAU: sheet["P10"]?.v !== undefined ? sheet["P10"].v : 0,
-          SOR: sheet["P4"]?.v !== undefined ? sheet["P4"].v : 0,
+          CAS: sheet["P4"]?.v !== undefined ? sheet["P4"].v : 0,
+          FLN: sheet["P2"]?.v !== undefined ? sheet["P2"].v : 0,
+          BAU: sheet["L7"]?.v !== undefined ? sheet["L7"].v : 0,
+          SOR: sheet["P5"]?.v !== undefined ? sheet["P5"].v : 0,
           JVL: sheet["P6"]?.v !== undefined ? sheet["P6"].v : 0,
           SMA: sheet["P8"]?.v !== undefined ? sheet["P8"].v : 0,
-          RIP: sheet["P2"]?.v !== undefined ? sheet["P2"].v : 0,
+          RIP: sheet["P3"]?.v !== undefined ? sheet["P3"].v : 0,
         };
         setPontuacoesPorCentralizadora(pontuacoes);
 
         // Bloco padrão (normal)
         const celulas = {
           POA: {
-            valor1: sheet["F8"] ? sheet["F8"].v : "",
-            valor2: sheet["H8"] ? sheet["H8"].v : "",
-          },
-          SAO: {
-            valor1: sheet["F9"] ? sheet["F9"].v : "",
-            valor2: sheet["H9"] ? sheet["H9"].v : "",
-          },
-          CPN: {
-            valor1: sheet["F10"] ? sheet["F10"].v : "",
-            valor2: sheet["H10"] ? sheet["H10"].v : "",
-          },
-          CWB: {
             valor1: sheet["F11"] ? sheet["F11"].v : "",
             valor2: sheet["H11"] ? sheet["H11"].v : "",
           },
-          VIX: {
+          BAU: {
+            valor1: sheet["J22"] ? sheet["J22"].v : "",
+            valor2: sheet["L22"] ? sheet["L22"].v : "",
+          },
+          BLU: {
+            valor1: sheet["J23"] ? sheet["J23"].v : "",
+            valor2: sheet["L23"] ? sheet["L23"].v : "",
+          },
+          SAO: {
             valor1: sheet["F12"] ? sheet["F12"].v : "",
             valor2: sheet["H12"] ? sheet["H12"].v : "",
           },
+          CPN: {
+            valor1: sheet["F13"] ? sheet["F13"].v : "",
+            valor2: sheet["H13"] ? sheet["H13"].v : "",
+          },
+          CWB: {
+            valor1: sheet["F14"] ? sheet["F14"].v : "",
+            valor2: sheet["H14"] ? sheet["H14"].v : "",
+          },
+          VIX: {
+            valor1: sheet["J21"] ? sheet["J21"].v : "",
+            valor2: sheet["L21"] ? sheet["L21"].v : "",
+          },
           GRU: {
-            valor1: sheet["J10"] ? sheet["J10"].v : "",
-            valor2: sheet["L10"] ? sheet["L10"].v : "",
+            valor1: sheet["J20"] ? sheet["J20"].v : "",
+            valor2: sheet["L20"] ? sheet["L20"].v : "",
           },
           CXS: {
-            valor1: sheet["J8"] ? sheet["J8"].v : "",
-            valor2: sheet["L8"] ? sheet["L8"].v : "",
+            valor1: sheet["J18"] ? sheet["J18"].v : "",
+            valor2: sheet["L18"] ? sheet["L18"].v : "",
           },
           BHZ: {
-            valor1: sheet["J7"] ? sheet["J7"].v : "",
-            valor2: sheet["L7"] ? sheet["L7"].v : "",
+            valor1: sheet["J17"] ? sheet["J17"].v : "",
+            valor2: sheet["L17"] ? sheet["L17"].v : "",
           },
           PPY: {
-            valor1: sheet["J9"] ? sheet["J9"].v : "",
-            valor2: sheet["L9"] ? sheet["L9"].v : "",
+            valor1: sheet["J19"] ? sheet["J19"].v : "",
+            valor2: sheet["L19"] ? sheet["L19"].v : "",
           },
           // Adicione outras centralizadoras conforme necessário
         };
@@ -96,40 +104,48 @@ export default function EquipesPage() {
         // Bloco invertido (F13 e H13 para POA, outras centralizadoras conforme desejar)
         const celulasInvertido = {
           POA: {
-            valor1: sheet["F13"] ? sheet["F13"].v : "",
-            valor2: sheet["H13"] ? sheet["H13"].v : "",
+            valor1: sheet["F7"] ? sheet["F7"].v : "",
+            valor2: sheet["H7"] ? sheet["H7"].v : "",
+          },
+          BAU: {
+            valor1: sheet["J15"] ? sheet["J15"].v : "",
+            valor2: sheet["L15"] ? sheet["L15"].v : "",
+          },
+          BLU: {
+            valor1: sheet["J16"] ? sheet["J16"].v : "",
+            valor2: sheet["L16"] ? sheet["L16"].v : "",
           },
           SAO: {
-            valor1: sheet["F14"] ? sheet["F14"].v : "",
-            valor2: sheet["H14"] ? sheet["H14"].v : "",
+            valor1: sheet["F8"] ? sheet["F8"].v : "",
+            valor2: sheet["H8"] ? sheet["H8"].v : "",
           },
           CPN: {
-            valor1: sheet["F15"] ? sheet["F15"].v : "",
-            valor2: sheet["H15"] ? sheet["H15"].v : "",
+            valor1: sheet["F9"] ? sheet["F9"].v : "",
+            valor2: sheet["H9"] ? sheet["H9"].v : "",
           },
           CWB: {
-            valor1: sheet["F16"] ? sheet["F16"].v : "",
-            valor2: sheet["H16"] ? sheet["H16"].v : "",
+            valor1: sheet["F10"] ? sheet["F10"].v : "",
+            valor2: sheet["H10"] ? sheet["H10"].v : "",
           },
           VIX: {
-            valor1: sheet["F17"] ? sheet["F17"].v : "",
-            valor2: sheet["H17"] ? sheet["H17"].v : "",
-          },
-          GRU: {
             valor1: sheet["J14"] ? sheet["J14"].v : "",
             valor2: sheet["L14"] ? sheet["L14"].v : "",
           },
-          CXS: {
-            valor1: sheet["J12"] ? sheet["J12"].v : "",
-            valor2: sheet["L12"] ? sheet["L12"].v : "",
+          GRU: {
+            valor1: sheet["J13"] ? sheet["J13"].v : "",
+            valor2: sheet["L13"] ? sheet["L13"].v : "",
           },
-          BHZ: {
+          CXS: {
             valor1: sheet["J11"] ? sheet["J11"].v : "",
             valor2: sheet["L11"] ? sheet["L11"].v : "",
           },
+          BHZ: {
+            valor1: sheet["J10"] ? sheet["J10"].v : "",
+            valor2: sheet["L10"] ? sheet["L10"].v : "",
+          },
           PPY: {
-            valor1: sheet["J13"] ? sheet["J13"].v : "",
-            valor2: sheet["L13"] ? sheet["L13"].v : "",
+            valor1: sheet["J12"] ? sheet["J12"].v : "",
+            valor2: sheet["L12"] ? sheet["L12"].v : "",
           },
           // Adicione outros parceiros conforme necessário
         };
@@ -137,9 +153,9 @@ export default function EquipesPage() {
 
         // Pontuação de equipe
         const pontuacoesEquipe = {
-          Sênior: getValorSeguro(sheet["H18"]),
-          Pleno: getValorSeguro(sheet["L15"]),
-          Soft: getValorSeguro(sheet["P11"]),
+          Sênior: getValorSeguro(sheet["H15"]),
+          Pleno: getValorSeguro(sheet["L24"]),
+          Soft: getValorSeguro(sheet["P9"]),
         };
         setPontuacaoEquipe(pontuacoesEquipe);
 
