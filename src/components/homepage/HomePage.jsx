@@ -91,7 +91,7 @@ export default function HomePage() {
             }}
           >
             <p style={{ color: "#ffc400ff" }}>
-              🕒 Última atualização do sistema: 07/11/2025 17:57h
+              🕒 Última atualização do sistema: 10/11/2025 15:52h
             </p>
           </motion.div>
 
