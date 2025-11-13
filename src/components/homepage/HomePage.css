@@ -69,3 +69,126 @@
 .blinking-image {
   animation: blinkImage 2s infinite;
 }
+
+/* ======= INÍCIO DO CSS DO POPUP MISSÃO ======= */
+.mission-popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(40, 1, 44, 0.78);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInPopup 0.4s ease;
+}
+@keyframes fadeInPopup {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.mission-popup {
+  background: linear-gradient(135deg, #181227 70%, #4b1b53 100%);
+  color: #fff;
+  border-radius: 22px;
+  box-shadow: 0 6px 48px 0 rgb(78 0 89 / 50%);
+  padding: 30px 22px 25px 22px;
+  min-width: 350px;
+  max-width: 390px;
+  border: 2px solid #f9a826;
+  position: relative;
+  font-family: "Montserrat", "Roboto", sans-serif;
+}
+
+.mission-popup-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+.mission-popup-header h2 {
+  font-size: 1.33rem;
+  margin: 0 0 6px 0;
+  color: #ffc400ff;
+  font-family: inherit;
+  font-weight: 700;
+  text-shadow: 0 3px 12px #200c2c;
+}
+.mission-popup-header p {
+  font-size: 0.92rem;
+  color: #ddd;
+  margin: 0 0 3px 0;
+}
+.mission-period {
+  display: block;
+  font-size: 0.85rem;
+  color: #c5a47f;
+  margin-bottom: 2px;
+}
+.mission-popup-flag {
+  width: 3px;
+  height: 3px;
+  background: linear-gradient(135deg, #f9a826, #c822fa 88%);
+  border-radius: 10px 0 10px 5px;
+  display: inline-block;
+  box-shadow: 0 1px 6px #fff2;
+  margin-top: 3px;
+}
+.mission-close-btn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: #ff3180;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.18s;
+}
+
+.mission-list {
+  margin-top: 23px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.mission-card {
+  background: #232133cf;
+  border-radius: 16px;
+  padding: 10px 14px;
+  box-shadow: 0 2px 18px 0 #4b1b532f;
+  border: 1.4px solid #4b1b53;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.mission-card-title {
+  font-weight: 600;
+  font-size: 1.02rem;
+  color: #f9a826;
+}
+.mission-info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.97rem;
+  margin-top: 2px;
+}
+.mission-target {
+  font-weight: 500;
+  color: #a573ff;
+}
+.mission-reward {
+  font-weight: 700;
+  color: #ffc400;
+}
+.mission-benefit {
+  font-size: 0.92rem;
+  color: #19ea83;
+  font-weight: 600;
+  margin-top: 3px;
+  text-align: right;
+}
+/* ======= FIM DO CSS DO POPUP MISSÃO ======= */

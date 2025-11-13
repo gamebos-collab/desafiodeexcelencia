@@ -4,10 +4,69 @@ import { motion } from "framer-motion";
 import * as XLSX from "xlsx";
 import "./HomePage.css";
 
+// ======= INÍCIO DO POPUP MISSÃO (REMOVA ENTRE ESTES COMENTÁRIOS PARA DESABILITAR O POPUP) =======
+function MissionPopup({
+  show,
+  onClose,
+  title = "Missão do Dia",
+  subtitle = "Você pode editar esta missão até Segunda-feira 0:00",
+  period = "Seg 4:00 - Sex 4:00",
+  missions = [],
+}) {
+  if (!show) return null;
+
+  return (
+    <div className="mission-popup-overlay">
+      <motion.div
+        className="mission-popup"
+        initial={{ opacity: 0, y: -80, scale: 0.97 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.65 }}
+      >
+        <div className="mission-popup-header">
+          <div className="mission-popup-flag" />
+          <div>
+            <h2>{title}</h2>
+            <p>{subtitle}</p>
+            <span className="mission-period">{period}</span>
+          </div>
+          <button className="mission-close-btn" onClick={onClose}>
+            ×
+          </button>
+        </div>
+        <div className="mission-list">
+          {missions.map((mission, idx) => (
+            <div key={idx} className="mission-card">
+              <div className="mission-card-title">Missão {mission.level}</div>
+              <div className="mission-info-row">
+                <span className="mission-target">
+                  {mission.target.split("\n").map((line, i) => (
+                    <React.Fragment key={i}>
+                      {line}
+                      <br />
+                    </React.Fragment>
+                  ))}
+                </span>
+                <span className="mission-reward">{mission.reward}</span>
+              </div>
+              {mission.benefit && (
+                <div className="mission-benefit">
+                  <span>+{mission.benefit}</span>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+// ======= FIM DO POPUP MISSÃO (REMOVA ENTRE ESTES COMENTÁRIOS PARA DESABILITAR O POPUP) =======
+
 export default function HomePage() {
   const navigate = useNavigate();
   const [dadosTabela, setDadosTabela] = useState([]);
-  const [showPopup, setShowPopup] = useState(true);
+  const [showPopup, setShowPopup] = useState(false); // ativa e desativa popup
 
   useEffect(() => {
     const carregarDados = async () => {
@@ -42,7 +101,6 @@ export default function HomePage() {
           minHeight: "100vh",
         }}
       >
-        {/* Conteúdo da página */}
         <div style={{ flexGrow: 1 }}>
           <motion.div
             className="banner"
@@ -55,6 +113,36 @@ export default function HomePage() {
               Competição entre equipes rumo à excelência!
             </p>
           </motion.div>
+
+          {/* ======= INÍCIO DO POPUP MISSÃO ======= */}
+          <MissionPopup
+            show={showPopup}
+            onClose={() => setShowPopup(false)}
+            title="Missão do Dia"
+            subtitle="Ganhe pontos extra no seu Desafio de Excelência!"
+            period="Sex 08:00 à Sex 12:00"
+            missions={[
+              {
+                level: 1,
+                target: "20 B.Os\nAcima de 11 dias",
+                reward: "🏆 50 pontos",
+                benefit: "CPN SAO POA VIX",
+              },
+              {
+                level: 2,
+                target: "10 B.Os\nAcima de 11 dias",
+                reward: "🏆 50 pontos",
+                benefit: "CWB GRU BHZ",
+              },
+              {
+                level: 3,
+                target: "5 B.Os\nAcima de 11 dias",
+                reward: "🏆 50 pontos",
+                benefit: "CXS BLU PPY BAU",
+              },
+            ]}
+          />
+          {/* ======= FIM DO POPUP MISSÃO ======= */}
 
           <motion.div
             className="buttons"
@@ -164,7 +252,6 @@ export default function HomePage() {
                   </tbody>
                 </table>
 
-                {/* ✅ Imagem abaixo da tabela */}
                 <div style={{ marginTop: "10px", textAlign: "center" }}>
                   <img
                     src="/assets/bbmlogistica.png"
@@ -189,14 +276,6 @@ export default function HomePage() {
         </div>
         <br />
       </div>
-      {/* DICA: Para animação shake no popup, adicione no seu CSS: */}
-      {/* 
-      @keyframes shake {
-        0%, 100% { transform: translate(-50%, -50%) }
-        10%, 30%, 50%, 70%, 90% { transform: translate(-50%, -54%) }
-        20%, 40%, 60%, 80% { transform: translate(-50%, -46%);}
-      }
-      */}
     </>
   );
 }
