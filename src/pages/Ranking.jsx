@@ -149,8 +149,8 @@ const Ranking = () => {
     <div className="ranking-container">
       <Navigation />
 
-      <h1 className="ranking-title">Ranking dos Maiores Pontuadores</h1>
-      <p className="subtitle">Ranking dos maiores pontuadores Sênior e Pleno</p>
+      <h1 className="ranking-title">Ranking dos Pontuadores</h1>
+      <p className="subtitle">Ranking dos Pontuadores Sênior e Pleno</p>
       <div className="ranking-flex">
         <div className="main-ranking">
           {rankingGeral.length > 0 ? (
@@ -165,10 +165,10 @@ const Ranking = () => {
       </div>
 
       <h2 className="ranking-title" style={{ marginTop: "4rem" }}>
-        Ranking Soft
+        Ranking dos Pontuadores
       </h2>
       <p className="subtitle">
-        Ranking dos maiores pontuadores exclusiva da categoria Soft
+        Ranking dos Pontuadores exclusiva da categoria Soft
       </p>
       <div className="ranking-flex">
         <div className="main-ranking">
