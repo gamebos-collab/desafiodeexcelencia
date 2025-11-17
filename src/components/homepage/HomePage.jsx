@@ -120,7 +120,7 @@ export default function HomePage() {
             onClose={() => setShowPopup(false)}
             title="Missão do Dia"
             subtitle="Ganhe pontos extra no seu Desafio de Excelência!"
-            period="Ter18/11 08:00 à Ter18/11 12:00"
+            period="Ter - 18/11 08:00 à Ter - 18/11 12:00"
             missions={[
               {
                 level: 1,
