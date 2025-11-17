@@ -66,7 +66,7 @@ function MissionPopup({
 export default function HomePage() {
   const navigate = useNavigate();
   const [dadosTabela, setDadosTabela] = useState([]);
-  const [showPopup, setShowPopup] = useState(false); // ativa e desativa popup
+  const [showPopup, setShowPopup] = useState(true); // ativa e desativa popup
 
   useEffect(() => {
     const carregarDados = async () => {
@@ -120,7 +120,7 @@ export default function HomePage() {
             onClose={() => setShowPopup(false)}
             title="Missão do Dia"
             subtitle="Ganhe pontos extra no seu Desafio de Excelência!"
-            period="Sex 08:00 à Sex 12:00"
+            period="Ter 08:00 à Ter 12:00"
             missions={[
               {
                 level: 1,
@@ -179,7 +179,7 @@ export default function HomePage() {
             }}
           >
             <p style={{ color: "#ffc400ff" }}>
-              🕒 Última atualização do sistema: 14/11/2025 10:15h
+              🕒 Última atualização do sistema: 15/11/2025 14:06h
             </p>
           </motion.div>
 
