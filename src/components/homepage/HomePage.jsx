@@ -66,7 +66,7 @@ function MissionPopup({
 export default function HomePage() {
   const navigate = useNavigate();
   const [dadosTabela, setDadosTabela] = useState([]);
-  const [showPopup, setShowPopup] = useState(true); // ativa e desativa popup
+  const [showPopup, setShowPopup] = useState(false); // ativa e desativa popup
 
   useEffect(() => {
     const carregarDados = async () => {
@@ -179,7 +179,7 @@ export default function HomePage() {
             }}
           >
             <p style={{ color: "#ffc400ff" }}>
-              🕒 Última atualização do sistema: 15/11/2025 14:06h
+              🕒 Última atualização do sistema: 18/11/2025 13:56h
             </p>
           </motion.div>
 
