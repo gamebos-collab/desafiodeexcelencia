@@ -127,14 +127,17 @@
   color: #c5a47f;
   margin-bottom: 2px;
 }
+.progress-popup-flag,
 .mission-popup-flag {
-  width: 3px;
-  height: 3px;
-  background: linear-gradient(135deg, #f9a826, #c822fa 88%);
-  border-radius: 10px 0 10px 5px;
-  display: inline-block;
-  box-shadow: 0 1px 6px #fff2;
-  margin-top: 3px;
+  width: 46px;
+  height: 46px;
+  border-radius: 8px; /* ajuste se quiser cantos mais arredondados */
+  background: none;
+  background-image: url("/assets/logohome.png"); /* caminho do arquivo */
+  background-size: cover; /* cover preenche o bloco */
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: none; /* ou ajuste se quiser sombra */
 }
 .mission-close-btn {
   margin-left: auto;
