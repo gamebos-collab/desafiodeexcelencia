@@ -769,7 +769,7 @@ export default function HomePage() {
           NF: "108403",
           Parecer: "Volumes/documentos localizados",
           "Dias em Aberto": 50,
-          Funcionario: "Gabriela Luckmann",
+          Funcionario: "Sara Ferreira",
           Pontuacao: 3,
         },
         {
