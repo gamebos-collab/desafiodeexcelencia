@@ -726,7 +726,7 @@ export default function HomePage() {
   const navigate = useNavigate();
   const [dadosTabela, setDadosTabela] = useState([]);
   const [showPopup, setShowPopup] = useState(false); // ativa desativa popup missao
-  const [showProgressPopup, setShowProgressPopup] = useState(true); // ativa desativa popup progresso
+  const [showProgressPopup, setShowProgressPopup] = useState(false); // ativa desativa popup progresso
 
   // exemplo de barras (preencha reportRows manualmente)
   const barras = [
@@ -1278,7 +1278,7 @@ export default function HomePage() {
             }}
           >
             <p style={{ color: "#ffc400ff" }}>
-              🕒 Última atualização do sistema: 19/11/2025 10:44h
+              🕒 Última atualização do sistema: 24/11/2025 08:53h
             </p>
           </motion.div>
 
