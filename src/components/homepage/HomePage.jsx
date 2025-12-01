@@ -55,6 +55,81 @@ function expandRows(rows = []) {
   });
 }
 
+// ========= VencedoresPopup =========
+function VencedoresPopup({
+  show,
+  onClose,
+  images = [],
+  title = "Vencedores",
+  subtitle = "Parabéns às equipes destaque!",
+}) {
+  if (!show) return null;
+
+  return (
+    <div className="vencedores-popup-overlay">
+      <motion.div
+        className="vencedores-popup"
+        initial={{ opacity: 0, y: -80, scale: 0.97 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.65 }}
+      >
+        <div
+          className="vencedores-popup-header"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <div>
+            <h2>{title}</h2>
+            <p>{subtitle}</p>
+          </div>
+          <button className="mission-close-btn" onClick={onClose}>
+            ×
+          </button>
+        </div>
+        <div
+          className="vencedores-image-list"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "30px",
+            flexWrap: "wrap",
+            margin: "24px 0",
+          }}
+        >
+          {images.map((img, idx) => (
+            <div key={idx} style={{ textAlign: "center" }}>
+              <img
+                src={img.src}
+                alt={img.alt || `Vencedor ${idx + 1}`}
+                style={{
+                  width: img.width || 140,
+                  height: img.height || 140,
+                  objectFit: "cover",
+                  borderRadius: 12,
+                  boxShadow: "0 4px 18px rgba(0,0,0,0.16)",
+                  border: "2.5px solid #ffd85a",
+                  background: "#232323",
+                }}
+              />
+              <div style={{ marginTop: 8, color: "#ffe08a", fontWeight: 600 }}>
+                {img.label || ""}
+              </div>
+            </div>
+          ))}
+        </div>
+        <div style={{ textAlign: "right" }}>
+          <button className="btn" onClick={onClose}>
+            Fechar
+          </button>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
 // ======= MissionPopup (mantido) =======
 function MissionPopup({
   show,
@@ -727,6 +802,15 @@ export default function HomePage() {
   const [dadosTabela, setDadosTabela] = useState([]);
   const [showPopup, setShowPopup] = useState(false); // ativa desativa popup missao
   const [showProgressPopup, setShowProgressPopup] = useState(false); // ativa desativa popup progresso
+  const [showVencedores, setShowVencedores] = useState(true); // <===== Abre AUTOMATICAMENTE na tela
+
+  // Exemplo de imagens vencedores, ajuste conforme as imagens na pasta Assets (coloque as corretas)
+  const vencedoresImgs = [
+    { src: "/assets/equipesenior/cpn.png", label: "CPN" },
+    { src: "/assets/equipesenior/blu.jpg", label: "BLU" },
+    { src: "/assets/equipepleno/cas.png", label: "CAS" },
+    // Pode adicionar mais, basta colocar src e label
+  ];
 
   // exemplo de barras (preencha reportRows manualmente)
   const barras = [
@@ -783,6 +867,7 @@ export default function HomePage() {
         },
       ],
     },
+    // ... (mantido todo restante das barras)
     {
       name: "Equipe SAO",
       subtitle: "18/20",
@@ -953,7 +1038,7 @@ export default function HomePage() {
         },
       ],
     },
-
+    // ....... mantém as demais barras ........
     {
       name: "Equipe CPN",
       subtitle: "9/20",
@@ -1162,6 +1247,24 @@ export default function HomePage() {
       .progress-list::-webkit-scrollbar-thumb, .report-table-wrapper::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.06); border-radius: 8px; }
 
       @media (max-width:520px) { .progress-meta { gap:8px } .progress-name { font-size:12px } .progress-subtitle { font-size:11px } .progress-percent { font-size:12px } }
+
+      /* ======= Vencedores popup custom style ======= */
+      .vencedores-popup-overlay { position: fixed; inset: 0; background: rgba(8,8,42,0.56); display:flex; align-items:center; justify-content:center; z-index:2020; padding:25px; }
+      .vencedores-popup {
+        width: min(480px,92%);
+        max-width:600px;
+        background:linear-gradient(180deg,#232328 98%,#232323 100%);
+        border-radius:18px;
+        padding:20px 18px 18px 18px;
+        box-shadow:0 10px 38px rgba(30,30,60,0.13),0 0 0 2px #ffd85a47;
+        border:1.5px solid #ffd85a61;
+      }
+      .vencedores-popup-header h2 { color:#ffe08a; font-size:22px; font-weight:800; margin-bottom:2px }
+      .vencedores-popup-header p { color:#ffe28a; margin-top:6px }
+      .vencedores-popup-header .mission-close-btn { background:transparent;border:none;color:#ffe08a;font-size:24px;cursor:pointer; }
+
+      .vencedores-image-list img { box-shadow:0 8px 22px rgba(255,210,80,0.14); }
+      .vencedores-popup .btn { background:linear-gradient(90deg,#ffd84a,#ffb347);color:#2b2b2b;font-weight:800;border:none;border-radius:10px;padding:7px 18px; font-size:13px;cursor:pointer;margin-left:12px }
     `;
     const styleEl = document.createElement("style");
     styleEl.id = styleId;
@@ -1243,6 +1346,15 @@ export default function HomePage() {
             bars={barras}
           />
 
+          {/* ==== POPUP Vencedores AUTOMÁTICO ==== */}
+          <VencedoresPopup
+            show={showVencedores}
+            onClose={() => setShowVencedores(false)}
+            images={vencedoresImgs}
+            title="Vencedores"
+            subtitle="Parabéns às equipes destaque!"
+          />
+
           <motion.div
             className="buttons"
             initial={{ opacity: 0 }}
@@ -1278,7 +1390,7 @@ export default function HomePage() {
             }}
           >
             <p style={{ color: "#ffc400ff" }}>
-              🕒 Última atualização do sistema: 28/11/2025 08:10h
+              🕒 Última atualização do sistema: 01/12/2025 08:49h
             </p>
           </motion.div>
 
