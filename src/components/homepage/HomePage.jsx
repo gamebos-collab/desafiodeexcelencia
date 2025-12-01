@@ -60,7 +60,7 @@ function VencedoresPopup({
   show,
   onClose,
   images = [],
-  title = "Vencedores",
+  title = "Vencedores Novembro",
   subtitle = "Parabéns às equipes destaque!",
 }) {
   if (!show) return null;
