@@ -802,7 +802,7 @@ export default function HomePage() {
   const [dadosTabela, setDadosTabela] = useState([]);
   const [showPopup, setShowPopup] = useState(false); // ativa desativa popup missao
   const [showProgressPopup, setShowProgressPopup] = useState(false); // ativa desativa popup progresso
-  const [showVencedores, setShowVencedores] = useState(true); // <===== Abre AUTOMATICAMENTE na tela
+  const [showVencedores, setShowVencedores] = useState(false); // <===== Abre AUTOMATICAMENTE na tela
 
   // Exemplo de imagens vencedores, ajuste conforme as imagens na pasta Assets (coloque as corretas)
   const vencedoresImgs = [
