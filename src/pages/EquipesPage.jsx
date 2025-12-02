@@ -347,6 +347,21 @@ export default function EquipesPage() {
         flexDirection: "column",
       }}
     >
+      <div
+        style={{
+          position: "absolute",
+          top: "30px",
+          left: "88%",
+          transform: "translateX(-50%) rotate(45deg)", // Rotaciona só o GIF
+          width: "300px",
+          height: "300px",
+          backgroundImage: 'url("/assets/luzes.gif")',
+          backgroundSize: "contain",
+          backgroundRepeat: "no-repeat",
+          zIndex: 2,
+        }}
+      />
+
       <Navigation />
       <h1 style={{ color: "#f9a826", marginBottom: "120px" }}>
         Ranking das Equipes

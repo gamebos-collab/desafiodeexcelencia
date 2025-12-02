@@ -60,7 +60,7 @@ function VencedoresPopup({
   show,
   onClose,
   images = [],
-  title = "Vencedores Novembro",
+  title = "Vencedores",
   subtitle = "Parabéns às equipes destaque!",
 }) {
   if (!show) return null;
@@ -1389,7 +1389,7 @@ export default function HomePage() {
               fontSize: "12px",
             }}
           >
-            <p style={{ color: "#ffc400ff" }}>
+            <p style={{ color: "#ffffffff" }}>
               🕒 Última atualização do sistema: 01/12/2025 08:49h
             </p>
           </motion.div>
